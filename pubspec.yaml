@@ -1,0 +1,49 @@
+name: boonda_mitra
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.1.0+12
+
+environment:
+  sdk: '>=3.3.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_native_splash: ^2.4.0
+  get_storage: ^2.1.1
+  gettext: ^1.2.0
+  google_fonts: ^6.2.1
+  icons_launcher: ^2.1.7
+  json_annotation: ^4.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  build_runner: ^2.4.9
+  freezed: ^2.5.2
+  json_serializable: ^6.8.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - images/
+
+icons_launcher:
+  image_path: "images/ic_boonda.jpg"
+  platforms:
+    android:
+      enable: true
+    ios:
+      enable: true
+
+flutter_native_splash:
+  color: "#F2893C"
+  image: images/ic_boonda.jpg
+
+  android_12:
+    image: images/ic_boonda.jpg
+    icon_background_color: "#F2893C"
+
+  web: true
