@@ -42,20 +42,54 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.boonda_mitra"
+        applicationId "com.gti.boonda.daycare"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion flutter.minSdkVersion
+        minSdkVersion 20
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
 
     buildTypes {
+        debug{
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+
+            minifyEnabled false 
+            shrinkResources false
+        }
+
+        profile {
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled true 
+            shrinkResources true
+        }
+    }
+
+    flavorDimensions "app"
+
+    productFlavors {
+        dev {
+            dimension "app"
+            resValue "string", "app_name", "Boonda Mitra Dev"
+            versionNameSuffix "-dev"
+            applicationIdSuffix ".dev"
+        }
+        stag {
+            dimension "app"
+            resValue "string", "app_name", "Boonda Mitra Staging"
+            versionNameSuffix "-staging"
+            applicationIdSuffix ".stag"
+        }
+        prod {
+            dimension "app"
+            resValue "string", "app_name", "Boonda Mitra"
         }
     }
 }
@@ -65,3 +99,5 @@ flutter {
 }
 
 dependencies {}
+
+apply plugin: 'com.google.gms.google-services'

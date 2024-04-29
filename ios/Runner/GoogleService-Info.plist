@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>165745023871-ls3bm8uktbo9os06gkasue6mam9stchm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.165745023871-ls3bm8uktbo9os06gkasue6mam9stchm</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>165745023871-0ukbujnh322fmmfncu1tnu7030b0lfg4.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB9S-LgalXQaGY7dN1GJ8vui_E17XR3uBY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>165745023871</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.gti.boonda.daycare</string>
+	<key>PROJECT_ID</key>
+	<string>boonda-apps</string>
+	<key>STORAGE_BUCKET</key>
+	<string>boonda-apps.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:165745023871:ios:fc8c2e0ff8620d91a4d84a</string>
+</dict>
+</plist>

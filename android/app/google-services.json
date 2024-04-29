@@ -1,0 +1,374 @@
+{
+  "project_info": {
+    "project_number": "165745023871",
+    "project_id": "boonda-apps",
+    "storage_bucket": "boonda-apps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165745023871:android:d87a36c43d7f57d8a4d84a",
+        "android_client_info": {
+          "package_name": "com.example.firebase_messaging_tutorial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165745023871-8r6svn7bu8s8vr99jfpun034679v1a62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCq_CVy4udGkXg6tAlG9LrY24QhfLlex4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165745023871-8r6svn7bu8s8vr99jfpun034679v1a62.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165745023871-1ibdg5b2tcue62vk1jjptvurc9k648mq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.gti.boonda.stag"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165745023871:android:0b327a87a164a438a4d84a",
+        "android_client_info": {
+          "package_name": "com.gti.boonda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165745023871-2its756uu902cvbffhupaopa86unllk2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gti.boonda",
+            "certificate_hash": "b6c6680df61133cd533adcac6093d7d93e411a21"
+          }
+        },
+        {
+          "client_id": "165745023871-35un5dacvn5d2es7732tuonutu9sp00i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gti.boonda",
+            "certificate_hash": "fa3ac90f7d530d9f65e66f39eb24fd5ccf496f09"
+          }
+        },
+        {
+          "client_id": "165745023871-inhvhv23p5287tl4i6m2l947kgocfl9r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gti.boonda",
+            "certificate_hash": "2ff8ae5e5295141a42d6b7894b6d56a68ee940c5"
+          }
+        },
+        {
+          "client_id": "165745023871-8r6svn7bu8s8vr99jfpun034679v1a62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCq_CVy4udGkXg6tAlG9LrY24QhfLlex4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165745023871-8r6svn7bu8s8vr99jfpun034679v1a62.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165745023871-1ibdg5b2tcue62vk1jjptvurc9k648mq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.gti.boonda.stag"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165745023871:android:acba99360e758ea5a4d84a",
+        "android_client_info": {
+          "package_name": "com.gti.boonda.daycare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165745023871-8ncuc6fq8djg50qerv51b674jdtkk58s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gti.boonda.daycare",
+            "certificate_hash": "5bbd9187f9ca473247c8b11e717a3d77d18eb464"
+          }
+        },
+        {
+          "client_id": "165745023871-gjnvu2urmrpmvjqk28ntscp8ch72akkr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gti.boonda.daycare",
+            "certificate_hash": "fa3ac90f7d530d9f65e66f39eb24fd5ccf496f09"
+          }
+        },
+        {
+          "client_id": "165745023871-8r6svn7bu8s8vr99jfpun034679v1a62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCq_CVy4udGkXg6tAlG9LrY24QhfLlex4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165745023871-8r6svn7bu8s8vr99jfpun034679v1a62.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165745023871-1ibdg5b2tcue62vk1jjptvurc9k648mq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.gti.boonda.stag"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165745023871:android:9c1104fa25f5b10ea4d84a",
+        "android_client_info": {
+          "package_name": "com.gti.boonda.daycare.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165745023871-2vukuk6r4k3ev71osbecmrn6gr36teop.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gti.boonda.daycare.dev",
+            "certificate_hash": "fa3ac90f7d530d9f65e66f39eb24fd5ccf496f09"
+          }
+        },
+        {
+          "client_id": "165745023871-m0v83fb96gm17jsa97rm0h3u55fjmvhb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gti.boonda.daycare.dev",
+            "certificate_hash": "2ff8ae5e5295141a42d6b7894b6d56a68ee940c5"
+          }
+        },
+        {
+          "client_id": "165745023871-8r6svn7bu8s8vr99jfpun034679v1a62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCq_CVy4udGkXg6tAlG9LrY24QhfLlex4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165745023871-8r6svn7bu8s8vr99jfpun034679v1a62.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165745023871-1ibdg5b2tcue62vk1jjptvurc9k648mq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.gti.boonda.stag"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165745023871:android:d2e3e5a5edce958fa4d84a",
+        "android_client_info": {
+          "package_name": "com.gti.boonda.daycare.stag"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165745023871-9hda3j6rjb1h0aito7h1m1ep75mubve0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gti.boonda.daycare.stag",
+            "certificate_hash": "fa3ac90f7d530d9f65e66f39eb24fd5ccf496f09"
+          }
+        },
+        {
+          "client_id": "165745023871-ukfsutskm4t05c06fru2t2regpqb2bhb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gti.boonda.daycare.stag",
+            "certificate_hash": "90a84ec4a2a12613d71afdf4f66d83820d3b94ca"
+          }
+        },
+        {
+          "client_id": "165745023871-8r6svn7bu8s8vr99jfpun034679v1a62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCq_CVy4udGkXg6tAlG9LrY24QhfLlex4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165745023871-8r6svn7bu8s8vr99jfpun034679v1a62.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165745023871-1ibdg5b2tcue62vk1jjptvurc9k648mq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.gti.boonda.stag"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165745023871:android:26fd91cab28416aca4d84a",
+        "android_client_info": {
+          "package_name": "com.gti.boonda.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165745023871-0ukbujnh322fmmfncu1tnu7030b0lfg4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gti.boonda.dev",
+            "certificate_hash": "2ff8ae5e5295141a42d6b7894b6d56a68ee940c5"
+          }
+        },
+        {
+          "client_id": "165745023871-3k8tfb7e90fj31uetsn9v2sm2ac0mr9h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gti.boonda.dev",
+            "certificate_hash": "fa3ac90f7d530d9f65e66f39eb24fd5ccf496f09"
+          }
+        },
+        {
+          "client_id": "165745023871-anvi8tf8oft9ee9mfbt12qvm5e34h5it.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gti.boonda.dev",
+            "certificate_hash": "90a84ec4a2a12613d71afdf4f66d83820d3b94ca"
+          }
+        },
+        {
+          "client_id": "165745023871-8r6svn7bu8s8vr99jfpun034679v1a62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCq_CVy4udGkXg6tAlG9LrY24QhfLlex4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165745023871-8r6svn7bu8s8vr99jfpun034679v1a62.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165745023871-1ibdg5b2tcue62vk1jjptvurc9k648mq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.gti.boonda.stag"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165745023871:android:9c835208b0b9116fa4d84a",
+        "android_client_info": {
+          "package_name": "com.gti.boonda.stag"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165745023871-tc2br8ijq24ap9mml7pta218chdopibg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gti.boonda.stag",
+            "certificate_hash": "fa3ac90f7d530d9f65e66f39eb24fd5ccf496f09"
+          }
+        },
+        {
+          "client_id": "165745023871-vhsjb6bb4qmaiucsruol5ttova2sab45.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gti.boonda.stag",
+            "certificate_hash": "90a84ec4a2a12613d71afdf4f66d83820d3b94ca"
+          }
+        },
+        {
+          "client_id": "165745023871-8r6svn7bu8s8vr99jfpun034679v1a62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCq_CVy4udGkXg6tAlG9LrY24QhfLlex4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165745023871-8r6svn7bu8s8vr99jfpun034679v1a62.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165745023871-1ibdg5b2tcue62vk1jjptvurc9k648mq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.gti.boonda.stag"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
