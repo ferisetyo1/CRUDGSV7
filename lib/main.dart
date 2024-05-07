@@ -8,7 +8,6 @@ import 'package:form_builder_validators/localization/l10n.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -22,7 +21,9 @@ import 'config/style/radio_theme_data.dart';
 import 'config/style/text_style.dart';
 import 'config/translation/app_translation.dart';
 import 'firebase_options.dart';
+// ignore: library_prefixes
 import 'firebase_options_staging.dart' as FireStag;
+// ignore: library_prefixes
 import 'firebase_options_dev.dart' as FireDev;
 
 Future<void> main() async {
@@ -89,7 +90,7 @@ class MyApp extends StatelessWidget {
           routingCallback: (value) async {
             try {
               await FirebaseAnalytics.instance
-                  .logScreenView(screenName: "${value?.current}");
+                  .logScreenView(screenName: "boonda-mitra/${value?.current}");
             } catch (e) {
               debugPrint(e.toString());
             }

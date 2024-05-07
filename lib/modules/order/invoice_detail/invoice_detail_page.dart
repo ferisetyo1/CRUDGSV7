@@ -28,7 +28,7 @@ class InvoiceDetailPage extends GetView<InvoiceDetailController> {
                 Column(
                   children: [
                     Visibility(
-                      visible: status.visibilityButtonCancel,
+                      visible: status.visibilityButtonReject,
                       child: FilledButton(
                               style: const ButtonStyle(
                                   backgroundColor: MaterialStatePropertyAll(
@@ -36,8 +36,16 @@ class InvoiceDetailPage extends GetView<InvoiceDetailController> {
                               onPressed: () {
                                 controller.cancel();
                               },
-                              child: const Text("Batalkan"))
+                              child: const Text("Tolak"))
                           .marginOnly(bottom: 8),
+                    ),
+                    Visibility(
+                      visible: status.visibilityButtonAccept,
+                      child: FilledButton(
+                          onPressed: () {
+                            controller.terima();
+                          },
+                          child: const Text("Terima")),
                     ),
                     Visibility(
                       visible: status.visibilityButtonUnduhInvoice,

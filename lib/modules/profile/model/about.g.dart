@@ -8,7 +8,7 @@ part of 'about.dart';
 
 _$AboutResponseImpl _$$AboutResponseImplFromJson(Map<String, dynamic> json) =>
     _$AboutResponseImpl(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       type: json['type'] as String?,
       content: json['content'] as String?,
       lang: json['lang'] as String?,

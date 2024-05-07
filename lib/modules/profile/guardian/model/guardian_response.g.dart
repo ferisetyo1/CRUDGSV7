@@ -9,7 +9,7 @@ part of 'guardian_response.dart';
 _$GuardianResponseImpl _$$GuardianResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$GuardianResponseImpl(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       photo: json['photo'] as String?,
       parentId: json['parent_id'] as String?,

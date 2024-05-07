@@ -1,6 +1,7 @@
 import 'package:boonda_mitra/common/utils/date_ext.dart';
 import 'package:boonda_mitra/config/bindings/app_bindings.dart';
 import 'package:boonda_mitra/modules/order/model/detail_price_response.dart';
+import 'package:boonda_mitra/modules/order/model/income_data.dart';
 import 'package:boonda_mitra/modules/order/model/order_response.dart';
 import 'package:boonda_mitra/modules/order/model/payment_method_response.dart';
 import 'package:dio/dio.dart';
@@ -73,6 +74,7 @@ class OrderServices extends GetxService {
 
   Future<AppState<List<OrderResponse>>> getOrders(
       {required int page,
+      int limit = 20,
       String status = "",
       String startDate = "",
       CancelToken? cancelToken}) async {
@@ -80,7 +82,7 @@ class OrderServices extends GetxService {
       request: (helper) => helper.get("transactions",
           queryParameters: {
             "page": page,
-            "limit": 20,
+            "limit": limit,
             "status": status,
             "start_date": startDate
           },
@@ -96,7 +98,7 @@ class OrderServices extends GetxService {
 
   Future<AppState<OrderResponse>> getOrder({required int id}) async {
     return await dio.handleRequest(
-      request: (helper) => helper.get("order/$id"),
+      request: (helper) => helper.get("transaction/$id"),
       customSuccess: (data) {
         return AppState.success(OrderResponse.fromJson(data.data));
       },
@@ -112,19 +114,34 @@ class OrderServices extends GetxService {
     );
   }
 
-  Future<AppState> refund(
-      {required int id,
-      String? bankName,
-      String? bankAccName,
-      String? noRekening,
-      String? reason}) async {
+  Future<AppState<int>> totalRevenue() async {
     return await dio.handleRequest(
-      request: (helper) => helper.post("order/$id/refund", data: {
-        "bank_account_name": bankAccName,
-        "bank_name": bankName,
-        "bank_account_number": noRekening,
-        "reason": reason
-      }),
+      request: (helper) => helper.get("total-revenue"),
+      customSuccess: (data) {
+        try {
+          return AppState.success((data.data?["revenue"] as int?) ?? 0);
+        } catch (e) {
+          return const AppState.success(0);
+        }
+      },
+    );
+  }
+
+  Future<AppState<List<IncomeData>>> incomeData(
+      DateTime start, DateTime end) async {
+    return await dio.handleRequest(
+      request: (helper) => helper.get("total-revenue"),
+      customSuccess: (data) {
+        final list = data.data as List;
+        final newData = list.map((e) => IncomeData.fromJson(e)).toList();
+        return AppState.success(newData);
+      },
+    );
+  }
+
+  Future<AppState> accept(int id) async {
+    return await dio.handleRequest(
+      request: (helper) => helper.put("transaction/$id/accept"),
       customSuccess: (data) {
         return const AppState.success(false);
       },

@@ -8,7 +8,7 @@ part of 'growth_response.dart';
 
 _$GrowthResponseImpl _$$GrowthResponseImplFromJson(Map<String, dynamic> json) =>
     _$GrowthResponseImpl(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       age: json['age'] as String?,
       height: json['height'] as String?,
       weight: json['weight'] as String?,

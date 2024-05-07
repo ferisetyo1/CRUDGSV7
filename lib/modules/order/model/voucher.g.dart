@@ -8,7 +8,7 @@ part of 'voucher.dart';
 
 _$VoucherImpl _$$VoucherImplFromJson(Map<String, dynamic> json) =>
     _$VoucherImpl(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       description: json['description'] as String?,
       startDate: json['start_date'] == null
@@ -17,7 +17,7 @@ _$VoucherImpl _$$VoucherImplFromJson(Map<String, dynamic> json) =>
       endDate: json['end_date'] == null
           ? null
           : DateTime.parse(json['end_date'] as String),
-      amount: json['amount'] as int?,
+      amount: (json['amount'] as num?)?.toInt(),
       percent: json['percent'],
       photo: json['photo'] as String?,
       type: json['type'] as String?,

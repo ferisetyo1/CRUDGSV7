@@ -103,7 +103,7 @@ class UpdateProfilPage extends GetView<UpdateProfilController> {
                       border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                       )),
-                  options: {"0": "male".tr, "1": "female".tr}
+                  options: {"1": "male".tr, "2": "female".tr}
                       .entries
                       .map((e) => FormBuilderFieldOption(
                             value: e.key,

@@ -119,7 +119,7 @@ class DetailAnakPage extends GetView<DetailAnakController> {
                               child: Column(
                                 children: [
                                   Text(
-                                    data.gender == "1"
+                                    data.gender == "0"
                                         ? "Perempuan"
                                         : "Laki - Laki",
                                     style: const TextStyle(fontSize: 16),
@@ -229,7 +229,7 @@ class DetailAnakPage extends GetView<DetailAnakController> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              Text(e.daycare?.name ?? ""),
+                                              // Text(e.daycare?.name ?? ""),
                                               Text(
                                                   "${e.startDate?.format("dd MMMM yyyy")} - ${e.endDate?.format("dd MMMM yyyy")}"),
                                             ],

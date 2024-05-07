@@ -21,15 +21,19 @@ OrderResponse _$OrderResponseFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$OrderResponse {
   int? get id => throw _privateConstructorUsedError;
+  dynamic get newPriceId => throw _privateConstructorUsedError;
+  dynamic get type => throw _privateConstructorUsedError;
+  dynamic get typeId => throw _privateConstructorUsedError;
   DateTime? get startDate => throw _privateConstructorUsedError;
   DateTime? get endDate => throw _privateConstructorUsedError;
-  dynamic get specialRequest => throw _privateConstructorUsedError;
+  String? get specialRequest => throw _privateConstructorUsedError;
   String? get price => throw _privateConstructorUsedError;
   String? get discountAmount => throw _privateConstructorUsedError;
   String? get discountPercent => throw _privateConstructorUsedError;
   dynamic get voucherName => throw _privateConstructorUsedError;
   String? get totalDiscount => throw _privateConstructorUsedError;
-  dynamic get fee => throw _privateConstructorUsedError;
+  String? get fee => throw _privateConstructorUsedError;
+  String? get bankFee => throw _privateConstructorUsedError;
   String? get totalPrice => throw _privateConstructorUsedError;
   String? get status => throw _privateConstructorUsedError;
   String? get statusRefund => throw _privateConstructorUsedError;
@@ -37,18 +41,16 @@ mixin _$OrderResponse {
   String? get virtualAccountNumber => throw _privateConstructorUsedError;
   dynamic get qrUrl => throw _privateConstructorUsedError;
   dynamic get deeplinkUrl => throw _privateConstructorUsedError;
-  dynamic get paymentAt => throw _privateConstructorUsedError;
+  DateTime? get paymentAt => throw _privateConstructorUsedError;
   DateTime? get expiredAt => throw _privateConstructorUsedError;
   DateTime? get createdAt => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
-  dynamic get rejectedReason => throw _privateConstructorUsedError;
+  String? get rejectedReason => throw _privateConstructorUsedError;
   dynamic get rejectCategoryId => throw _privateConstructorUsedError;
   List<ChildrenItemDetail>? get childrenItemDetails =>
       throw _privateConstructorUsedError;
   List<OrderResponseItem>? get items => throw _privateConstructorUsedError;
   PaymentChannel? get paymentChannel => throw _privateConstructorUsedError;
-  dynamic get review => throw _privateConstructorUsedError;
-  Daycare? get daycare => throw _privateConstructorUsedError;
   Parent? get parent => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -65,15 +67,19 @@ abstract class $OrderResponseCopyWith<$Res> {
   @useResult
   $Res call(
       {int? id,
+      dynamic newPriceId,
+      dynamic type,
+      dynamic typeId,
       DateTime? startDate,
       DateTime? endDate,
-      dynamic specialRequest,
+      String? specialRequest,
       String? price,
       String? discountAmount,
       String? discountPercent,
       dynamic voucherName,
       String? totalDiscount,
-      dynamic fee,
+      String? fee,
+      String? bankFee,
       String? totalPrice,
       String? status,
       String? statusRefund,
@@ -81,21 +87,18 @@ abstract class $OrderResponseCopyWith<$Res> {
       String? virtualAccountNumber,
       dynamic qrUrl,
       dynamic deeplinkUrl,
-      dynamic paymentAt,
+      DateTime? paymentAt,
       DateTime? expiredAt,
       DateTime? createdAt,
       DateTime? updatedAt,
-      dynamic rejectedReason,
+      String? rejectedReason,
       dynamic rejectCategoryId,
       List<ChildrenItemDetail>? childrenItemDetails,
       List<OrderResponseItem>? items,
       PaymentChannel? paymentChannel,
-      dynamic review,
-      Daycare? daycare,
       Parent? parent});
 
   $PaymentChannelCopyWith<$Res>? get paymentChannel;
-  $DaycareCopyWith<$Res>? get daycare;
   $ParentCopyWith<$Res>? get parent;
 }
 
@@ -113,6 +116,9 @@ class _$OrderResponseCopyWithImpl<$Res, $Val extends OrderResponse>
   @override
   $Res call({
     Object? id = freezed,
+    Object? newPriceId = freezed,
+    Object? type = freezed,
+    Object? typeId = freezed,
     Object? startDate = freezed,
     Object? endDate = freezed,
     Object? specialRequest = freezed,
@@ -122,6 +128,7 @@ class _$OrderResponseCopyWithImpl<$Res, $Val extends OrderResponse>
     Object? voucherName = freezed,
     Object? totalDiscount = freezed,
     Object? fee = freezed,
+    Object? bankFee = freezed,
     Object? totalPrice = freezed,
     Object? status = freezed,
     Object? statusRefund = freezed,
@@ -138,8 +145,6 @@ class _$OrderResponseCopyWithImpl<$Res, $Val extends OrderResponse>
     Object? childrenItemDetails = freezed,
     Object? items = freezed,
     Object? paymentChannel = freezed,
-    Object? review = freezed,
-    Object? daycare = freezed,
     Object? parent = freezed,
   }) {
     return _then(_value.copyWith(
@@ -147,6 +152,18 @@ class _$OrderResponseCopyWithImpl<$Res, $Val extends OrderResponse>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
+      newPriceId: freezed == newPriceId
+          ? _value.newPriceId
+          : newPriceId // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      typeId: freezed == typeId
+          ? _value.typeId
+          : typeId // ignore: cast_nullable_to_non_nullable
+              as dynamic,
       startDate: freezed == startDate
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
@@ -158,7 +175,7 @@ class _$OrderResponseCopyWithImpl<$Res, $Val extends OrderResponse>
       specialRequest: freezed == specialRequest
           ? _value.specialRequest
           : specialRequest // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
       price: freezed == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -182,7 +199,11 @@ class _$OrderResponseCopyWithImpl<$Res, $Val extends OrderResponse>
       fee: freezed == fee
           ? _value.fee
           : fee // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
+      bankFee: freezed == bankFee
+          ? _value.bankFee
+          : bankFee // ignore: cast_nullable_to_non_nullable
+              as String?,
       totalPrice: freezed == totalPrice
           ? _value.totalPrice
           : totalPrice // ignore: cast_nullable_to_non_nullable
@@ -214,7 +235,7 @@ class _$OrderResponseCopyWithImpl<$Res, $Val extends OrderResponse>
       paymentAt: freezed == paymentAt
           ? _value.paymentAt
           : paymentAt // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as DateTime?,
       expiredAt: freezed == expiredAt
           ? _value.expiredAt
           : expiredAt // ignore: cast_nullable_to_non_nullable
@@ -230,7 +251,7 @@ class _$OrderResponseCopyWithImpl<$Res, $Val extends OrderResponse>
       rejectedReason: freezed == rejectedReason
           ? _value.rejectedReason
           : rejectedReason // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
       rejectCategoryId: freezed == rejectCategoryId
           ? _value.rejectCategoryId
           : rejectCategoryId // ignore: cast_nullable_to_non_nullable
@@ -247,14 +268,6 @@ class _$OrderResponseCopyWithImpl<$Res, $Val extends OrderResponse>
           ? _value.paymentChannel
           : paymentChannel // ignore: cast_nullable_to_non_nullable
               as PaymentChannel?,
-      review: freezed == review
-          ? _value.review
-          : review // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      daycare: freezed == daycare
-          ? _value.daycare
-          : daycare // ignore: cast_nullable_to_non_nullable
-              as Daycare?,
       parent: freezed == parent
           ? _value.parent
           : parent // ignore: cast_nullable_to_non_nullable
@@ -271,18 +284,6 @@ class _$OrderResponseCopyWithImpl<$Res, $Val extends OrderResponse>
 
     return $PaymentChannelCopyWith<$Res>(_value.paymentChannel!, (value) {
       return _then(_value.copyWith(paymentChannel: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $DaycareCopyWith<$Res>? get daycare {
-    if (_value.daycare == null) {
-      return null;
-    }
-
-    return $DaycareCopyWith<$Res>(_value.daycare!, (value) {
-      return _then(_value.copyWith(daycare: value) as $Val);
     });
   }
 
@@ -309,15 +310,19 @@ abstract class _$$OrderResponseImplCopyWith<$Res>
   @useResult
   $Res call(
       {int? id,
+      dynamic newPriceId,
+      dynamic type,
+      dynamic typeId,
       DateTime? startDate,
       DateTime? endDate,
-      dynamic specialRequest,
+      String? specialRequest,
       String? price,
       String? discountAmount,
       String? discountPercent,
       dynamic voucherName,
       String? totalDiscount,
-      dynamic fee,
+      String? fee,
+      String? bankFee,
       String? totalPrice,
       String? status,
       String? statusRefund,
@@ -325,23 +330,19 @@ abstract class _$$OrderResponseImplCopyWith<$Res>
       String? virtualAccountNumber,
       dynamic qrUrl,
       dynamic deeplinkUrl,
-      dynamic paymentAt,
+      DateTime? paymentAt,
       DateTime? expiredAt,
       DateTime? createdAt,
       DateTime? updatedAt,
-      dynamic rejectedReason,
+      String? rejectedReason,
       dynamic rejectCategoryId,
       List<ChildrenItemDetail>? childrenItemDetails,
       List<OrderResponseItem>? items,
       PaymentChannel? paymentChannel,
-      dynamic review,
-      Daycare? daycare,
       Parent? parent});
 
   @override
   $PaymentChannelCopyWith<$Res>? get paymentChannel;
-  @override
-  $DaycareCopyWith<$Res>? get daycare;
   @override
   $ParentCopyWith<$Res>? get parent;
 }
@@ -358,6 +359,9 @@ class __$$OrderResponseImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
+    Object? newPriceId = freezed,
+    Object? type = freezed,
+    Object? typeId = freezed,
     Object? startDate = freezed,
     Object? endDate = freezed,
     Object? specialRequest = freezed,
@@ -367,6 +371,7 @@ class __$$OrderResponseImplCopyWithImpl<$Res>
     Object? voucherName = freezed,
     Object? totalDiscount = freezed,
     Object? fee = freezed,
+    Object? bankFee = freezed,
     Object? totalPrice = freezed,
     Object? status = freezed,
     Object? statusRefund = freezed,
@@ -383,8 +388,6 @@ class __$$OrderResponseImplCopyWithImpl<$Res>
     Object? childrenItemDetails = freezed,
     Object? items = freezed,
     Object? paymentChannel = freezed,
-    Object? review = freezed,
-    Object? daycare = freezed,
     Object? parent = freezed,
   }) {
     return _then(_$OrderResponseImpl(
@@ -392,6 +395,18 @@ class __$$OrderResponseImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
+      newPriceId: freezed == newPriceId
+          ? _value.newPriceId
+          : newPriceId // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      typeId: freezed == typeId
+          ? _value.typeId
+          : typeId // ignore: cast_nullable_to_non_nullable
+              as dynamic,
       startDate: freezed == startDate
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
@@ -403,7 +418,7 @@ class __$$OrderResponseImplCopyWithImpl<$Res>
       specialRequest: freezed == specialRequest
           ? _value.specialRequest
           : specialRequest // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
       price: freezed == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -427,7 +442,11 @@ class __$$OrderResponseImplCopyWithImpl<$Res>
       fee: freezed == fee
           ? _value.fee
           : fee // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
+      bankFee: freezed == bankFee
+          ? _value.bankFee
+          : bankFee // ignore: cast_nullable_to_non_nullable
+              as String?,
       totalPrice: freezed == totalPrice
           ? _value.totalPrice
           : totalPrice // ignore: cast_nullable_to_non_nullable
@@ -459,7 +478,7 @@ class __$$OrderResponseImplCopyWithImpl<$Res>
       paymentAt: freezed == paymentAt
           ? _value.paymentAt
           : paymentAt // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as DateTime?,
       expiredAt: freezed == expiredAt
           ? _value.expiredAt
           : expiredAt // ignore: cast_nullable_to_non_nullable
@@ -475,7 +494,7 @@ class __$$OrderResponseImplCopyWithImpl<$Res>
       rejectedReason: freezed == rejectedReason
           ? _value.rejectedReason
           : rejectedReason // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
       rejectCategoryId: freezed == rejectCategoryId
           ? _value.rejectCategoryId
           : rejectCategoryId // ignore: cast_nullable_to_non_nullable
@@ -492,14 +511,6 @@ class __$$OrderResponseImplCopyWithImpl<$Res>
           ? _value.paymentChannel
           : paymentChannel // ignore: cast_nullable_to_non_nullable
               as PaymentChannel?,
-      review: freezed == review
-          ? _value.review
-          : review // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      daycare: freezed == daycare
-          ? _value.daycare
-          : daycare // ignore: cast_nullable_to_non_nullable
-              as Daycare?,
       parent: freezed == parent
           ? _value.parent
           : parent // ignore: cast_nullable_to_non_nullable
@@ -514,6 +525,9 @@ class __$$OrderResponseImplCopyWithImpl<$Res>
 class _$OrderResponseImpl implements _OrderResponse {
   const _$OrderResponseImpl(
       {this.id,
+      this.newPriceId,
+      this.type,
+      this.typeId,
       this.startDate,
       this.endDate,
       this.specialRequest,
@@ -523,6 +537,7 @@ class _$OrderResponseImpl implements _OrderResponse {
       this.voucherName,
       this.totalDiscount,
       this.fee,
+      this.bankFee,
       this.totalPrice,
       this.status,
       this.statusRefund,
@@ -539,8 +554,6 @@ class _$OrderResponseImpl implements _OrderResponse {
       final List<ChildrenItemDetail>? childrenItemDetails,
       final List<OrderResponseItem>? items,
       this.paymentChannel,
-      this.review,
-      this.daycare,
       this.parent})
       : _childrenItemDetails = childrenItemDetails,
         _items = items;
@@ -551,11 +564,17 @@ class _$OrderResponseImpl implements _OrderResponse {
   @override
   final int? id;
   @override
+  final dynamic newPriceId;
+  @override
+  final dynamic type;
+  @override
+  final dynamic typeId;
+  @override
   final DateTime? startDate;
   @override
   final DateTime? endDate;
   @override
-  final dynamic specialRequest;
+  final String? specialRequest;
   @override
   final String? price;
   @override
@@ -567,7 +586,9 @@ class _$OrderResponseImpl implements _OrderResponse {
   @override
   final String? totalDiscount;
   @override
-  final dynamic fee;
+  final String? fee;
+  @override
+  final String? bankFee;
   @override
   final String? totalPrice;
   @override
@@ -583,7 +604,7 @@ class _$OrderResponseImpl implements _OrderResponse {
   @override
   final dynamic deeplinkUrl;
   @override
-  final dynamic paymentAt;
+  final DateTime? paymentAt;
   @override
   final DateTime? expiredAt;
   @override
@@ -591,7 +612,7 @@ class _$OrderResponseImpl implements _OrderResponse {
   @override
   final DateTime? updatedAt;
   @override
-  final dynamic rejectedReason;
+  final String? rejectedReason;
   @override
   final dynamic rejectCategoryId;
   final List<ChildrenItemDetail>? _childrenItemDetails;
@@ -618,15 +639,11 @@ class _$OrderResponseImpl implements _OrderResponse {
   @override
   final PaymentChannel? paymentChannel;
   @override
-  final dynamic review;
-  @override
-  final Daycare? daycare;
-  @override
   final Parent? parent;
 
   @override
   String toString() {
-    return 'OrderResponse(id: $id, startDate: $startDate, endDate: $endDate, specialRequest: $specialRequest, price: $price, discountAmount: $discountAmount, discountPercent: $discountPercent, voucherName: $voucherName, totalDiscount: $totalDiscount, fee: $fee, totalPrice: $totalPrice, status: $status, statusRefund: $statusRefund, invoiceNumber: $invoiceNumber, virtualAccountNumber: $virtualAccountNumber, qrUrl: $qrUrl, deeplinkUrl: $deeplinkUrl, paymentAt: $paymentAt, expiredAt: $expiredAt, createdAt: $createdAt, updatedAt: $updatedAt, rejectedReason: $rejectedReason, rejectCategoryId: $rejectCategoryId, childrenItemDetails: $childrenItemDetails, items: $items, paymentChannel: $paymentChannel, review: $review, daycare: $daycare, parent: $parent)';
+    return 'OrderResponse(id: $id, newPriceId: $newPriceId, type: $type, typeId: $typeId, startDate: $startDate, endDate: $endDate, specialRequest: $specialRequest, price: $price, discountAmount: $discountAmount, discountPercent: $discountPercent, voucherName: $voucherName, totalDiscount: $totalDiscount, fee: $fee, bankFee: $bankFee, totalPrice: $totalPrice, status: $status, statusRefund: $statusRefund, invoiceNumber: $invoiceNumber, virtualAccountNumber: $virtualAccountNumber, qrUrl: $qrUrl, deeplinkUrl: $deeplinkUrl, paymentAt: $paymentAt, expiredAt: $expiredAt, createdAt: $createdAt, updatedAt: $updatedAt, rejectedReason: $rejectedReason, rejectCategoryId: $rejectCategoryId, childrenItemDetails: $childrenItemDetails, items: $items, paymentChannel: $paymentChannel, parent: $parent)';
   }
 
   @override
@@ -635,11 +652,15 @@ class _$OrderResponseImpl implements _OrderResponse {
         (other.runtimeType == runtimeType &&
             other is _$OrderResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other.newPriceId, newPriceId) &&
+            const DeepCollectionEquality().equals(other.type, type) &&
+            const DeepCollectionEquality().equals(other.typeId, typeId) &&
             (identical(other.startDate, startDate) ||
                 other.startDate == startDate) &&
             (identical(other.endDate, endDate) || other.endDate == endDate) &&
-            const DeepCollectionEquality()
-                .equals(other.specialRequest, specialRequest) &&
+            (identical(other.specialRequest, specialRequest) ||
+                other.specialRequest == specialRequest) &&
             (identical(other.price, price) || other.price == price) &&
             (identical(other.discountAmount, discountAmount) ||
                 other.discountAmount == discountAmount) &&
@@ -649,7 +670,8 @@ class _$OrderResponseImpl implements _OrderResponse {
                 .equals(other.voucherName, voucherName) &&
             (identical(other.totalDiscount, totalDiscount) ||
                 other.totalDiscount == totalDiscount) &&
-            const DeepCollectionEquality().equals(other.fee, fee) &&
+            (identical(other.fee, fee) || other.fee == fee) &&
+            (identical(other.bankFee, bankFee) || other.bankFee == bankFee) &&
             (identical(other.totalPrice, totalPrice) ||
                 other.totalPrice == totalPrice) &&
             (identical(other.status, status) || other.status == status) &&
@@ -662,15 +684,16 @@ class _$OrderResponseImpl implements _OrderResponse {
             const DeepCollectionEquality().equals(other.qrUrl, qrUrl) &&
             const DeepCollectionEquality()
                 .equals(other.deeplinkUrl, deeplinkUrl) &&
-            const DeepCollectionEquality().equals(other.paymentAt, paymentAt) &&
+            (identical(other.paymentAt, paymentAt) ||
+                other.paymentAt == paymentAt) &&
             (identical(other.expiredAt, expiredAt) ||
                 other.expiredAt == expiredAt) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
                 other.updatedAt == updatedAt) &&
-            const DeepCollectionEquality()
-                .equals(other.rejectedReason, rejectedReason) &&
+            (identical(other.rejectedReason, rejectedReason) ||
+                other.rejectedReason == rejectedReason) &&
             const DeepCollectionEquality()
                 .equals(other.rejectCategoryId, rejectCategoryId) &&
             const DeepCollectionEquality()
@@ -678,8 +701,6 @@ class _$OrderResponseImpl implements _OrderResponse {
             const DeepCollectionEquality().equals(other._items, _items) &&
             (identical(other.paymentChannel, paymentChannel) ||
                 other.paymentChannel == paymentChannel) &&
-            const DeepCollectionEquality().equals(other.review, review) &&
-            (identical(other.daycare, daycare) || other.daycare == daycare) &&
             (identical(other.parent, parent) || other.parent == parent));
   }
 
@@ -688,15 +709,19 @@ class _$OrderResponseImpl implements _OrderResponse {
   int get hashCode => Object.hashAll([
         runtimeType,
         id,
+        const DeepCollectionEquality().hash(newPriceId),
+        const DeepCollectionEquality().hash(type),
+        const DeepCollectionEquality().hash(typeId),
         startDate,
         endDate,
-        const DeepCollectionEquality().hash(specialRequest),
+        specialRequest,
         price,
         discountAmount,
         discountPercent,
         const DeepCollectionEquality().hash(voucherName),
         totalDiscount,
-        const DeepCollectionEquality().hash(fee),
+        fee,
+        bankFee,
         totalPrice,
         status,
         statusRefund,
@@ -704,17 +729,15 @@ class _$OrderResponseImpl implements _OrderResponse {
         virtualAccountNumber,
         const DeepCollectionEquality().hash(qrUrl),
         const DeepCollectionEquality().hash(deeplinkUrl),
-        const DeepCollectionEquality().hash(paymentAt),
+        paymentAt,
         expiredAt,
         createdAt,
         updatedAt,
-        const DeepCollectionEquality().hash(rejectedReason),
+        rejectedReason,
         const DeepCollectionEquality().hash(rejectCategoryId),
         const DeepCollectionEquality().hash(_childrenItemDetails),
         const DeepCollectionEquality().hash(_items),
         paymentChannel,
-        const DeepCollectionEquality().hash(review),
-        daycare,
         parent
       ]);
 
@@ -735,15 +758,19 @@ class _$OrderResponseImpl implements _OrderResponse {
 abstract class _OrderResponse implements OrderResponse {
   const factory _OrderResponse(
       {final int? id,
+      final dynamic newPriceId,
+      final dynamic type,
+      final dynamic typeId,
       final DateTime? startDate,
       final DateTime? endDate,
-      final dynamic specialRequest,
+      final String? specialRequest,
       final String? price,
       final String? discountAmount,
       final String? discountPercent,
       final dynamic voucherName,
       final String? totalDiscount,
-      final dynamic fee,
+      final String? fee,
+      final String? bankFee,
       final String? totalPrice,
       final String? status,
       final String? statusRefund,
@@ -751,17 +778,15 @@ abstract class _OrderResponse implements OrderResponse {
       final String? virtualAccountNumber,
       final dynamic qrUrl,
       final dynamic deeplinkUrl,
-      final dynamic paymentAt,
+      final DateTime? paymentAt,
       final DateTime? expiredAt,
       final DateTime? createdAt,
       final DateTime? updatedAt,
-      final dynamic rejectedReason,
+      final String? rejectedReason,
       final dynamic rejectCategoryId,
       final List<ChildrenItemDetail>? childrenItemDetails,
       final List<OrderResponseItem>? items,
       final PaymentChannel? paymentChannel,
-      final dynamic review,
-      final Daycare? daycare,
       final Parent? parent}) = _$OrderResponseImpl;
 
   factory _OrderResponse.fromJson(Map<String, dynamic> json) =
@@ -770,11 +795,17 @@ abstract class _OrderResponse implements OrderResponse {
   @override
   int? get id;
   @override
+  dynamic get newPriceId;
+  @override
+  dynamic get type;
+  @override
+  dynamic get typeId;
+  @override
   DateTime? get startDate;
   @override
   DateTime? get endDate;
   @override
-  dynamic get specialRequest;
+  String? get specialRequest;
   @override
   String? get price;
   @override
@@ -786,7 +817,9 @@ abstract class _OrderResponse implements OrderResponse {
   @override
   String? get totalDiscount;
   @override
-  dynamic get fee;
+  String? get fee;
+  @override
+  String? get bankFee;
   @override
   String? get totalPrice;
   @override
@@ -802,7 +835,7 @@ abstract class _OrderResponse implements OrderResponse {
   @override
   dynamic get deeplinkUrl;
   @override
-  dynamic get paymentAt;
+  DateTime? get paymentAt;
   @override
   DateTime? get expiredAt;
   @override
@@ -810,7 +843,7 @@ abstract class _OrderResponse implements OrderResponse {
   @override
   DateTime? get updatedAt;
   @override
-  dynamic get rejectedReason;
+  String? get rejectedReason;
   @override
   dynamic get rejectCategoryId;
   @override
@@ -819,10 +852,6 @@ abstract class _OrderResponse implements OrderResponse {
   List<OrderResponseItem>? get items;
   @override
   PaymentChannel? get paymentChannel;
-  @override
-  dynamic get review;
-  @override
-  Daycare? get daycare;
   @override
   Parent? get parent;
   @override
@@ -1505,155 +1534,6 @@ abstract class _ProgramDetail implements ProgramDetail {
       throw _privateConstructorUsedError;
 }
 
-Daycare _$DaycareFromJson(Map<String, dynamic> json) {
-  return _Daycare.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Daycare {
-  int? get id => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $DaycareCopyWith<Daycare> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $DaycareCopyWith<$Res> {
-  factory $DaycareCopyWith(Daycare value, $Res Function(Daycare) then) =
-      _$DaycareCopyWithImpl<$Res, Daycare>;
-  @useResult
-  $Res call({int? id, String? name});
-}
-
-/// @nodoc
-class _$DaycareCopyWithImpl<$Res, $Val extends Daycare>
-    implements $DaycareCopyWith<$Res> {
-  _$DaycareCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$DaycareImplCopyWith<$Res> implements $DaycareCopyWith<$Res> {
-  factory _$$DaycareImplCopyWith(
-          _$DaycareImpl value, $Res Function(_$DaycareImpl) then) =
-      __$$DaycareImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({int? id, String? name});
-}
-
-/// @nodoc
-class __$$DaycareImplCopyWithImpl<$Res>
-    extends _$DaycareCopyWithImpl<$Res, _$DaycareImpl>
-    implements _$$DaycareImplCopyWith<$Res> {
-  __$$DaycareImplCopyWithImpl(
-      _$DaycareImpl _value, $Res Function(_$DaycareImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-  }) {
-    return _then(_$DaycareImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class _$DaycareImpl implements _Daycare {
-  const _$DaycareImpl({this.id, this.name});
-
-  factory _$DaycareImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DaycareImplFromJson(json);
-
-  @override
-  final int? id;
-  @override
-  final String? name;
-
-  @override
-  String toString() {
-    return 'Daycare(id: $id, name: $name)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DaycareImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, name);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DaycareImplCopyWith<_$DaycareImpl> get copyWith =>
-      __$$DaycareImplCopyWithImpl<_$DaycareImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$DaycareImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Daycare implements Daycare {
-  const factory _Daycare({final int? id, final String? name}) = _$DaycareImpl;
-
-  factory _Daycare.fromJson(Map<String, dynamic> json) = _$DaycareImpl.fromJson;
-
-  @override
-  int? get id;
-  @override
-  String? get name;
-  @override
-  @JsonKey(ignore: true)
-  _$$DaycareImplCopyWith<_$DaycareImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
 OrderResponseItem _$OrderResponseItemFromJson(Map<String, dynamic> json) {
   return _OrderResponseItem.fromJson(json);
 }
@@ -1856,11 +1736,11 @@ Parent _$ParentFromJson(Map<String, dynamic> json) {
 mixin _$Parent {
   int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
-  String? get photo => throw _privateConstructorUsedError;
+  dynamic get photo => throw _privateConstructorUsedError;
   dynamic get nik => throw _privateConstructorUsedError;
   String? get phoneNumber => throw _privateConstructorUsedError;
   String? get gender => throw _privateConstructorUsedError;
-  List<dynamic>? get guardians => throw _privateConstructorUsedError;
+  List<Guardian>? get guardians => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1875,11 +1755,11 @@ abstract class $ParentCopyWith<$Res> {
   $Res call(
       {int? id,
       String? name,
-      String? photo,
+      dynamic photo,
       dynamic nik,
       String? phoneNumber,
       String? gender,
-      List<dynamic>? guardians});
+      List<Guardian>? guardians});
 }
 
 /// @nodoc
@@ -1915,7 +1795,7 @@ class _$ParentCopyWithImpl<$Res, $Val extends Parent>
       photo: freezed == photo
           ? _value.photo
           : photo // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       nik: freezed == nik
           ? _value.nik
           : nik // ignore: cast_nullable_to_non_nullable
@@ -1931,7 +1811,7 @@ class _$ParentCopyWithImpl<$Res, $Val extends Parent>
       guardians: freezed == guardians
           ? _value.guardians
           : guardians // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>?,
+              as List<Guardian>?,
     ) as $Val);
   }
 }
@@ -1946,11 +1826,11 @@ abstract class _$$ParentImplCopyWith<$Res> implements $ParentCopyWith<$Res> {
   $Res call(
       {int? id,
       String? name,
-      String? photo,
+      dynamic photo,
       dynamic nik,
       String? phoneNumber,
       String? gender,
-      List<dynamic>? guardians});
+      List<Guardian>? guardians});
 }
 
 /// @nodoc
@@ -1984,7 +1864,7 @@ class __$$ParentImplCopyWithImpl<$Res>
       photo: freezed == photo
           ? _value.photo
           : photo // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       nik: freezed == nik
           ? _value.nik
           : nik // ignore: cast_nullable_to_non_nullable
@@ -2000,7 +1880,7 @@ class __$$ParentImplCopyWithImpl<$Res>
       guardians: freezed == guardians
           ? _value._guardians
           : guardians // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>?,
+              as List<Guardian>?,
     ));
   }
 }
@@ -2016,7 +1896,7 @@ class _$ParentImpl implements _Parent {
       this.nik,
       this.phoneNumber,
       this.gender,
-      final List<dynamic>? guardians})
+      final List<Guardian>? guardians})
       : _guardians = guardians;
 
   factory _$ParentImpl.fromJson(Map<String, dynamic> json) =>
@@ -2027,16 +1907,16 @@ class _$ParentImpl implements _Parent {
   @override
   final String? name;
   @override
-  final String? photo;
+  final dynamic photo;
   @override
   final dynamic nik;
   @override
   final String? phoneNumber;
   @override
   final String? gender;
-  final List<dynamic>? _guardians;
+  final List<Guardian>? _guardians;
   @override
-  List<dynamic>? get guardians {
+  List<Guardian>? get guardians {
     final value = _guardians;
     if (value == null) return null;
     if (_guardians is EqualUnmodifiableListView) return _guardians;
@@ -2056,7 +1936,7 @@ class _$ParentImpl implements _Parent {
             other is _$ParentImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.photo, photo) || other.photo == photo) &&
+            const DeepCollectionEquality().equals(other.photo, photo) &&
             const DeepCollectionEquality().equals(other.nik, nik) &&
             (identical(other.phoneNumber, phoneNumber) ||
                 other.phoneNumber == phoneNumber) &&
@@ -2071,7 +1951,7 @@ class _$ParentImpl implements _Parent {
       runtimeType,
       id,
       name,
-      photo,
+      const DeepCollectionEquality().hash(photo),
       const DeepCollectionEquality().hash(nik),
       phoneNumber,
       gender,
@@ -2095,11 +1975,11 @@ abstract class _Parent implements Parent {
   const factory _Parent(
       {final int? id,
       final String? name,
-      final String? photo,
+      final dynamic photo,
       final dynamic nik,
       final String? phoneNumber,
       final String? gender,
-      final List<dynamic>? guardians}) = _$ParentImpl;
+      final List<Guardian>? guardians}) = _$ParentImpl;
 
   factory _Parent.fromJson(Map<String, dynamic> json) = _$ParentImpl.fromJson;
 
@@ -2108,7 +1988,7 @@ abstract class _Parent implements Parent {
   @override
   String? get name;
   @override
-  String? get photo;
+  dynamic get photo;
   @override
   dynamic get nik;
   @override
@@ -2116,10 +1996,200 @@ abstract class _Parent implements Parent {
   @override
   String? get gender;
   @override
-  List<dynamic>? get guardians;
+  List<Guardian>? get guardians;
   @override
   @JsonKey(ignore: true)
   _$$ParentImplCopyWith<_$ParentImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Guardian _$GuardianFromJson(Map<String, dynamic> json) {
+  return _Guardian.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Guardian {
+  int? get id => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get parentId => throw _privateConstructorUsedError;
+  String? get phoneNumber => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GuardianCopyWith<Guardian> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GuardianCopyWith<$Res> {
+  factory $GuardianCopyWith(Guardian value, $Res Function(Guardian) then) =
+      _$GuardianCopyWithImpl<$Res, Guardian>;
+  @useResult
+  $Res call({int? id, String? name, String? parentId, String? phoneNumber});
+}
+
+/// @nodoc
+class _$GuardianCopyWithImpl<$Res, $Val extends Guardian>
+    implements $GuardianCopyWith<$Res> {
+  _$GuardianCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? parentId = freezed,
+    Object? phoneNumber = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      parentId: freezed == parentId
+          ? _value.parentId
+          : parentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phoneNumber: freezed == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GuardianImplCopyWith<$Res>
+    implements $GuardianCopyWith<$Res> {
+  factory _$$GuardianImplCopyWith(
+          _$GuardianImpl value, $Res Function(_$GuardianImpl) then) =
+      __$$GuardianImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int? id, String? name, String? parentId, String? phoneNumber});
+}
+
+/// @nodoc
+class __$$GuardianImplCopyWithImpl<$Res>
+    extends _$GuardianCopyWithImpl<$Res, _$GuardianImpl>
+    implements _$$GuardianImplCopyWith<$Res> {
+  __$$GuardianImplCopyWithImpl(
+      _$GuardianImpl _value, $Res Function(_$GuardianImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? parentId = freezed,
+    Object? phoneNumber = freezed,
+  }) {
+    return _then(_$GuardianImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      parentId: freezed == parentId
+          ? _value.parentId
+          : parentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phoneNumber: freezed == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+class _$GuardianImpl implements _Guardian {
+  const _$GuardianImpl({this.id, this.name, this.parentId, this.phoneNumber});
+
+  factory _$GuardianImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GuardianImplFromJson(json);
+
+  @override
+  final int? id;
+  @override
+  final String? name;
+  @override
+  final String? parentId;
+  @override
+  final String? phoneNumber;
+
+  @override
+  String toString() {
+    return 'Guardian(id: $id, name: $name, parentId: $parentId, phoneNumber: $phoneNumber)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GuardianImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.parentId, parentId) ||
+                other.parentId == parentId) &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                other.phoneNumber == phoneNumber));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name, parentId, phoneNumber);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GuardianImplCopyWith<_$GuardianImpl> get copyWith =>
+      __$$GuardianImplCopyWithImpl<_$GuardianImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GuardianImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _Guardian implements Guardian {
+  const factory _Guardian(
+      {final int? id,
+      final String? name,
+      final String? parentId,
+      final String? phoneNumber}) = _$GuardianImpl;
+
+  factory _Guardian.fromJson(Map<String, dynamic> json) =
+      _$GuardianImpl.fromJson;
+
+  @override
+  int? get id;
+  @override
+  String? get name;
+  @override
+  String? get parentId;
+  @override
+  String? get phoneNumber;
+  @override
+  @JsonKey(ignore: true)
+  _$$GuardianImplCopyWith<_$GuardianImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2132,12 +2202,7 @@ mixin _$PaymentChannel {
   int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get icon => throw _privateConstructorUsedError;
-  String? get paymentType => throw _privateConstructorUsedError;
-  bool? get isActive => throw _privateConstructorUsedError;
-  dynamic get bankNumber => throw _privateConstructorUsedError;
-  dynamic get accountHolderName => throw _privateConstructorUsedError;
-  String? get paymentGuide => throw _privateConstructorUsedError;
-  Daycare? get paymentMethod => throw _privateConstructorUsedError;
+  PaymentMethod? get paymentMethod => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -2152,17 +2217,9 @@ abstract class $PaymentChannelCopyWith<$Res> {
       _$PaymentChannelCopyWithImpl<$Res, PaymentChannel>;
   @useResult
   $Res call(
-      {int? id,
-      String? name,
-      String? icon,
-      String? paymentType,
-      bool? isActive,
-      dynamic bankNumber,
-      dynamic accountHolderName,
-      String? paymentGuide,
-      Daycare? paymentMethod});
+      {int? id, String? name, String? icon, PaymentMethod? paymentMethod});
 
-  $DaycareCopyWith<$Res>? get paymentMethod;
+  $PaymentMethodCopyWith<$Res>? get paymentMethod;
 }
 
 /// @nodoc
@@ -2181,11 +2238,6 @@ class _$PaymentChannelCopyWithImpl<$Res, $Val extends PaymentChannel>
     Object? id = freezed,
     Object? name = freezed,
     Object? icon = freezed,
-    Object? paymentType = freezed,
-    Object? isActive = freezed,
-    Object? bankNumber = freezed,
-    Object? accountHolderName = freezed,
-    Object? paymentGuide = freezed,
     Object? paymentMethod = freezed,
   }) {
     return _then(_value.copyWith(
@@ -2201,41 +2253,21 @@ class _$PaymentChannelCopyWithImpl<$Res, $Val extends PaymentChannel>
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as String?,
-      paymentType: freezed == paymentType
-          ? _value.paymentType
-          : paymentType // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isActive: freezed == isActive
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      bankNumber: freezed == bankNumber
-          ? _value.bankNumber
-          : bankNumber // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      accountHolderName: freezed == accountHolderName
-          ? _value.accountHolderName
-          : accountHolderName // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      paymentGuide: freezed == paymentGuide
-          ? _value.paymentGuide
-          : paymentGuide // ignore: cast_nullable_to_non_nullable
-              as String?,
       paymentMethod: freezed == paymentMethod
           ? _value.paymentMethod
           : paymentMethod // ignore: cast_nullable_to_non_nullable
-              as Daycare?,
+              as PaymentMethod?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $DaycareCopyWith<$Res>? get paymentMethod {
+  $PaymentMethodCopyWith<$Res>? get paymentMethod {
     if (_value.paymentMethod == null) {
       return null;
     }
 
-    return $DaycareCopyWith<$Res>(_value.paymentMethod!, (value) {
+    return $PaymentMethodCopyWith<$Res>(_value.paymentMethod!, (value) {
       return _then(_value.copyWith(paymentMethod: value) as $Val);
     });
   }
@@ -2250,18 +2282,10 @@ abstract class _$$PaymentChannelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int? id,
-      String? name,
-      String? icon,
-      String? paymentType,
-      bool? isActive,
-      dynamic bankNumber,
-      dynamic accountHolderName,
-      String? paymentGuide,
-      Daycare? paymentMethod});
+      {int? id, String? name, String? icon, PaymentMethod? paymentMethod});
 
   @override
-  $DaycareCopyWith<$Res>? get paymentMethod;
+  $PaymentMethodCopyWith<$Res>? get paymentMethod;
 }
 
 /// @nodoc
@@ -2278,11 +2302,6 @@ class __$$PaymentChannelImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = freezed,
     Object? icon = freezed,
-    Object? paymentType = freezed,
-    Object? isActive = freezed,
-    Object? bankNumber = freezed,
-    Object? accountHolderName = freezed,
-    Object? paymentGuide = freezed,
     Object? paymentMethod = freezed,
   }) {
     return _then(_$PaymentChannelImpl(
@@ -2298,30 +2317,10 @@ class __$$PaymentChannelImplCopyWithImpl<$Res>
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as String?,
-      paymentType: freezed == paymentType
-          ? _value.paymentType
-          : paymentType // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isActive: freezed == isActive
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      bankNumber: freezed == bankNumber
-          ? _value.bankNumber
-          : bankNumber // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      accountHolderName: freezed == accountHolderName
-          ? _value.accountHolderName
-          : accountHolderName // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      paymentGuide: freezed == paymentGuide
-          ? _value.paymentGuide
-          : paymentGuide // ignore: cast_nullable_to_non_nullable
-              as String?,
       paymentMethod: freezed == paymentMethod
           ? _value.paymentMethod
           : paymentMethod // ignore: cast_nullable_to_non_nullable
-              as Daycare?,
+              as PaymentMethod?,
     ));
   }
 }
@@ -2331,15 +2330,7 @@ class __$$PaymentChannelImplCopyWithImpl<$Res>
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class _$PaymentChannelImpl implements _PaymentChannel {
   const _$PaymentChannelImpl(
-      {this.id,
-      this.name,
-      this.icon,
-      this.paymentType,
-      this.isActive,
-      this.bankNumber,
-      this.accountHolderName,
-      this.paymentGuide,
-      this.paymentMethod});
+      {this.id, this.name, this.icon, this.paymentMethod});
 
   factory _$PaymentChannelImpl.fromJson(Map<String, dynamic> json) =>
       _$$PaymentChannelImplFromJson(json);
@@ -2351,21 +2342,11 @@ class _$PaymentChannelImpl implements _PaymentChannel {
   @override
   final String? icon;
   @override
-  final String? paymentType;
-  @override
-  final bool? isActive;
-  @override
-  final dynamic bankNumber;
-  @override
-  final dynamic accountHolderName;
-  @override
-  final String? paymentGuide;
-  @override
-  final Daycare? paymentMethod;
+  final PaymentMethod? paymentMethod;
 
   @override
   String toString() {
-    return 'PaymentChannel(id: $id, name: $name, icon: $icon, paymentType: $paymentType, isActive: $isActive, bankNumber: $bankNumber, accountHolderName: $accountHolderName, paymentGuide: $paymentGuide, paymentMethod: $paymentMethod)';
+    return 'PaymentChannel(id: $id, name: $name, icon: $icon, paymentMethod: $paymentMethod)';
   }
 
   @override
@@ -2376,33 +2357,13 @@ class _$PaymentChannelImpl implements _PaymentChannel {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.icon, icon) || other.icon == icon) &&
-            (identical(other.paymentType, paymentType) ||
-                other.paymentType == paymentType) &&
-            (identical(other.isActive, isActive) ||
-                other.isActive == isActive) &&
-            const DeepCollectionEquality()
-                .equals(other.bankNumber, bankNumber) &&
-            const DeepCollectionEquality()
-                .equals(other.accountHolderName, accountHolderName) &&
-            (identical(other.paymentGuide, paymentGuide) ||
-                other.paymentGuide == paymentGuide) &&
             (identical(other.paymentMethod, paymentMethod) ||
                 other.paymentMethod == paymentMethod));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      icon,
-      paymentType,
-      isActive,
-      const DeepCollectionEquality().hash(bankNumber),
-      const DeepCollectionEquality().hash(accountHolderName),
-      paymentGuide,
-      paymentMethod);
+  int get hashCode => Object.hash(runtimeType, id, name, icon, paymentMethod);
 
   @JsonKey(ignore: true)
   @override
@@ -2424,12 +2385,7 @@ abstract class _PaymentChannel implements PaymentChannel {
       {final int? id,
       final String? name,
       final String? icon,
-      final String? paymentType,
-      final bool? isActive,
-      final dynamic bankNumber,
-      final dynamic accountHolderName,
-      final String? paymentGuide,
-      final Daycare? paymentMethod}) = _$PaymentChannelImpl;
+      final PaymentMethod? paymentMethod}) = _$PaymentChannelImpl;
 
   factory _PaymentChannel.fromJson(Map<String, dynamic> json) =
       _$PaymentChannelImpl.fromJson;
@@ -2441,19 +2397,163 @@ abstract class _PaymentChannel implements PaymentChannel {
   @override
   String? get icon;
   @override
-  String? get paymentType;
-  @override
-  bool? get isActive;
-  @override
-  dynamic get bankNumber;
-  @override
-  dynamic get accountHolderName;
-  @override
-  String? get paymentGuide;
-  @override
-  Daycare? get paymentMethod;
+  PaymentMethod? get paymentMethod;
   @override
   @JsonKey(ignore: true)
   _$$PaymentChannelImplCopyWith<_$PaymentChannelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+PaymentMethod _$PaymentMethodFromJson(Map<String, dynamic> json) {
+  return _PaymentMethod.fromJson(json);
+}
+
+/// @nodoc
+mixin _$PaymentMethod {
+  int? get id => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PaymentMethodCopyWith<PaymentMethod> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PaymentMethodCopyWith<$Res> {
+  factory $PaymentMethodCopyWith(
+          PaymentMethod value, $Res Function(PaymentMethod) then) =
+      _$PaymentMethodCopyWithImpl<$Res, PaymentMethod>;
+  @useResult
+  $Res call({int? id, String? name});
+}
+
+/// @nodoc
+class _$PaymentMethodCopyWithImpl<$Res, $Val extends PaymentMethod>
+    implements $PaymentMethodCopyWith<$Res> {
+  _$PaymentMethodCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$PaymentMethodImplCopyWith<$Res>
+    implements $PaymentMethodCopyWith<$Res> {
+  factory _$$PaymentMethodImplCopyWith(
+          _$PaymentMethodImpl value, $Res Function(_$PaymentMethodImpl) then) =
+      __$$PaymentMethodImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int? id, String? name});
+}
+
+/// @nodoc
+class __$$PaymentMethodImplCopyWithImpl<$Res>
+    extends _$PaymentMethodCopyWithImpl<$Res, _$PaymentMethodImpl>
+    implements _$$PaymentMethodImplCopyWith<$Res> {
+  __$$PaymentMethodImplCopyWithImpl(
+      _$PaymentMethodImpl _value, $Res Function(_$PaymentMethodImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+  }) {
+    return _then(_$PaymentMethodImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+class _$PaymentMethodImpl implements _PaymentMethod {
+  const _$PaymentMethodImpl({this.id, this.name});
+
+  factory _$PaymentMethodImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PaymentMethodImplFromJson(json);
+
+  @override
+  final int? id;
+  @override
+  final String? name;
+
+  @override
+  String toString() {
+    return 'PaymentMethod(id: $id, name: $name)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PaymentMethodImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PaymentMethodImplCopyWith<_$PaymentMethodImpl> get copyWith =>
+      __$$PaymentMethodImplCopyWithImpl<_$PaymentMethodImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$PaymentMethodImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _PaymentMethod implements PaymentMethod {
+  const factory _PaymentMethod({final int? id, final String? name}) =
+      _$PaymentMethodImpl;
+
+  factory _PaymentMethod.fromJson(Map<String, dynamic> json) =
+      _$PaymentMethodImpl.fromJson;
+
+  @override
+  int? get id;
+  @override
+  String? get name;
+  @override
+  @JsonKey(ignore: true)
+  _$$PaymentMethodImplCopyWith<_$PaymentMethodImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -29,6 +29,7 @@ class InvoiceSection extends StatelessWidget {
           right: Text(
             paymentStatusType.show,
             style: TextStyle(color: paymentStatusType.textColor),
+            overflow: TextOverflow.ellipsis,
           ).withBgContainer(color: paymentStatusType.bgColor)),
       const SizedBox(height: 11),
       if (item.statusRefund != null)

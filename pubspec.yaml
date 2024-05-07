@@ -30,6 +30,7 @@ dependencies:
   flutter_screenutil: ^5.9.0
   font_awesome_flutter: ^10.7.0
   form_builder_validators: ^9.1.0
+  freezed_annotation: ^2.4.1
   geolocator: ^11.0.0
   get: ^4.6.6
   get_storage: ^2.1.1
@@ -39,6 +40,7 @@ dependencies:
   icons_launcher: ^2.1.7
   image_cropper: ^6.0.0
   image_picker: ^1.1.0
+  intl: ^0.18.1
   json_annotation: ^4.9.0
   jwt_decode: ^0.3.1
   package_info_plus: any
@@ -62,6 +64,7 @@ flutter:
 
   assets:
     - images/
+    - images/features/
 
 icons_launcher:
   image_path: "images/ic_boonda.jpg"

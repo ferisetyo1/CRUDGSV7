@@ -28,4 +28,13 @@ class InvoiceDetailController extends GetxController {
       getOrder();
     }
   }
+
+  void terima() async {
+    final resp = await service.accept(id).showLoading();
+    if (resp.isSuccess()) {
+      getOrder();
+    } else {
+      resp.showError();
+    }
+  }
 }

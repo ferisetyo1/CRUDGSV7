@@ -7,6 +7,7 @@ part 'profile.g.dart';
 class Profile with _$Profile {
   const Profile._();
 
+  // ignore: invalid_annotation_target
   @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
   const factory Profile({
     required int? id,

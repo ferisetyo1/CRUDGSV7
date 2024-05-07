@@ -9,7 +9,7 @@ part of 'payment_method_response.dart';
 _$PaymentMethodResponseImpl _$$PaymentMethodResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$PaymentMethodResponseImpl(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       channels: (json['channels'] as List<dynamic>?)
           ?.map((e) => Channel.fromJson(e as Map<String, dynamic>))
@@ -26,7 +26,7 @@ Map<String, dynamic> _$$PaymentMethodResponseImplToJson(
 
 _$ChannelImpl _$$ChannelImplFromJson(Map<String, dynamic> json) =>
     _$ChannelImpl(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       icon: json['icon'] as String?,
       paymentType: json['payment_type'] as String?,

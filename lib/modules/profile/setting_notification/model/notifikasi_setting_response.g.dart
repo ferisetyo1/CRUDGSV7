@@ -9,7 +9,7 @@ part of 'notifikasi_setting_response.dart';
 _$NotifikasiSettingResponseImpl _$$NotifikasiSettingResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$NotifikasiSettingResponseImpl(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       isActive: json['is_active'] as bool?,
     );

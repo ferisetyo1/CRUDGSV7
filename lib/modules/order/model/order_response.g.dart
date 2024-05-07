@@ -8,20 +8,24 @@ part of 'order_response.dart';
 
 _$OrderResponseImpl _$$OrderResponseImplFromJson(Map<String, dynamic> json) =>
     _$OrderResponseImpl(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
+      newPriceId: json['new_price_id'],
+      type: json['type'],
+      typeId: json['type_id'],
       startDate: json['start_date'] == null
           ? null
           : DateTime.parse(json['start_date'] as String),
       endDate: json['end_date'] == null
           ? null
           : DateTime.parse(json['end_date'] as String),
-      specialRequest: json['special_request'],
+      specialRequest: json['special_request'] as String?,
       price: json['price'] as String?,
       discountAmount: json['discount_amount'] as String?,
       discountPercent: json['discount_percent'] as String?,
       voucherName: json['voucher_name'],
       totalDiscount: json['total_discount'] as String?,
-      fee: json['fee'],
+      fee: json['fee'] as String?,
+      bankFee: json['bank_fee'] as String?,
       totalPrice: json['total_price'] as String?,
       status: json['status'] as String?,
       statusRefund: json['status_refund'] as String?,
@@ -29,7 +33,9 @@ _$OrderResponseImpl _$$OrderResponseImplFromJson(Map<String, dynamic> json) =>
       virtualAccountNumber: json['virtual_account_number'] as String?,
       qrUrl: json['qr_url'],
       deeplinkUrl: json['deeplink_url'],
-      paymentAt: json['payment_at'],
+      paymentAt: json['payment_at'] == null
+          ? null
+          : DateTime.parse(json['payment_at'] as String),
       expiredAt: json['expired_at'] == null
           ? null
           : DateTime.parse(json['expired_at'] as String),
@@ -39,7 +45,7 @@ _$OrderResponseImpl _$$OrderResponseImplFromJson(Map<String, dynamic> json) =>
       updatedAt: json['updated_at'] == null
           ? null
           : DateTime.parse(json['updated_at'] as String),
-      rejectedReason: json['rejected_reason'],
+      rejectedReason: json['rejected_reason'] as String?,
       rejectCategoryId: json['reject_category_id'],
       childrenItemDetails: (json['children_item_details'] as List<dynamic>?)
           ?.map((e) => ChildrenItemDetail.fromJson(e as Map<String, dynamic>))
@@ -51,10 +57,6 @@ _$OrderResponseImpl _$$OrderResponseImplFromJson(Map<String, dynamic> json) =>
           ? null
           : PaymentChannel.fromJson(
               json['payment_channel'] as Map<String, dynamic>),
-      review: json['review'],
-      daycare: json['daycare'] == null
-          ? null
-          : Daycare.fromJson(json['daycare'] as Map<String, dynamic>),
       parent: json['parent'] == null
           ? null
           : Parent.fromJson(json['parent'] as Map<String, dynamic>),
@@ -63,6 +65,9 @@ _$OrderResponseImpl _$$OrderResponseImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$OrderResponseImplToJson(_$OrderResponseImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'new_price_id': instance.newPriceId,
+      'type': instance.type,
+      'type_id': instance.typeId,
       'start_date': instance.startDate?.toIso8601String(),
       'end_date': instance.endDate?.toIso8601String(),
       'special_request': instance.specialRequest,
@@ -72,6 +77,7 @@ Map<String, dynamic> _$$OrderResponseImplToJson(_$OrderResponseImpl instance) =>
       'voucher_name': instance.voucherName,
       'total_discount': instance.totalDiscount,
       'fee': instance.fee,
+      'bank_fee': instance.bankFee,
       'total_price': instance.totalPrice,
       'status': instance.status,
       'status_refund': instance.statusRefund,
@@ -79,7 +85,7 @@ Map<String, dynamic> _$$OrderResponseImplToJson(_$OrderResponseImpl instance) =>
       'virtual_account_number': instance.virtualAccountNumber,
       'qr_url': instance.qrUrl,
       'deeplink_url': instance.deeplinkUrl,
-      'payment_at': instance.paymentAt,
+      'payment_at': instance.paymentAt?.toIso8601String(),
       'expired_at': instance.expiredAt?.toIso8601String(),
       'created_at': instance.createdAt?.toIso8601String(),
       'updated_at': instance.updatedAt?.toIso8601String(),
@@ -89,21 +95,19 @@ Map<String, dynamic> _$$OrderResponseImplToJson(_$OrderResponseImpl instance) =>
           instance.childrenItemDetails?.map((e) => e.toJson()).toList(),
       'items': instance.items?.map((e) => e.toJson()).toList(),
       'payment_channel': instance.paymentChannel?.toJson(),
-      'review': instance.review,
-      'daycare': instance.daycare?.toJson(),
       'parent': instance.parent?.toJson(),
     };
 
 _$ChildrenItemDetailImpl _$$ChildrenItemDetailImplFromJson(
         Map<String, dynamic> json) =>
     _$ChildrenItemDetailImpl(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       address: json['address'],
       birthDate: json['birth_date'] == null
           ? null
           : DateTime.parse(json['birth_date'] as String),
-      age: json['age'] as int?,
+      age: (json['age'] as num?)?.toInt(),
       ageString: json['age_string'] as String?,
       programDetail: json['program_detail'] == null
           ? null
@@ -158,25 +162,13 @@ Map<String, dynamic> _$$ProgramDetailImplToJson(_$ProgramDetailImpl instance) =>
       'program': instance.program,
     };
 
-_$DaycareImpl _$$DaycareImplFromJson(Map<String, dynamic> json) =>
-    _$DaycareImpl(
-      id: json['id'] as int?,
-      name: json['name'] as String?,
-    );
-
-Map<String, dynamic> _$$DaycareImplToJson(_$DaycareImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-    };
-
 _$OrderResponseItemImpl _$$OrderResponseItemImplFromJson(
         Map<String, dynamic> json) =>
     _$OrderResponseItemImpl(
       name: json['name'] as String?,
-      price: json['price'] as int?,
-      quantity: json['quantity'] as int?,
-      totalPrice: json['total_price'] as int?,
+      price: (json['price'] as num?)?.toInt(),
+      quantity: (json['quantity'] as num?)?.toInt(),
+      totalPrice: (json['total_price'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$OrderResponseItemImplToJson(
@@ -189,13 +181,15 @@ Map<String, dynamic> _$$OrderResponseItemImplToJson(
     };
 
 _$ParentImpl _$$ParentImplFromJson(Map<String, dynamic> json) => _$ParentImpl(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
-      photo: json['photo'] as String?,
+      photo: json['photo'],
       nik: json['nik'],
       phoneNumber: json['phone_number'] as String?,
       gender: json['gender'] as String?,
-      guardians: json['guardians'] as List<dynamic>?,
+      guardians: (json['guardians'] as List<dynamic>?)
+          ?.map((e) => Guardian.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$ParentImplToJson(_$ParentImpl instance) =>
@@ -206,22 +200,34 @@ Map<String, dynamic> _$$ParentImplToJson(_$ParentImpl instance) =>
       'nik': instance.nik,
       'phone_number': instance.phoneNumber,
       'gender': instance.gender,
-      'guardians': instance.guardians,
+      'guardians': instance.guardians?.map((e) => e.toJson()).toList(),
+    };
+
+_$GuardianImpl _$$GuardianImplFromJson(Map<String, dynamic> json) =>
+    _$GuardianImpl(
+      id: (json['id'] as num?)?.toInt(),
+      name: json['name'] as String?,
+      parentId: json['parent_id'] as String?,
+      phoneNumber: json['phone_number'] as String?,
+    );
+
+Map<String, dynamic> _$$GuardianImplToJson(_$GuardianImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'parent_id': instance.parentId,
+      'phone_number': instance.phoneNumber,
     };
 
 _$PaymentChannelImpl _$$PaymentChannelImplFromJson(Map<String, dynamic> json) =>
     _$PaymentChannelImpl(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       icon: json['icon'] as String?,
-      paymentType: json['payment_type'] as String?,
-      isActive: json['is_active'] as bool?,
-      bankNumber: json['bank_number'],
-      accountHolderName: json['account_holder_name'],
-      paymentGuide: json['payment_guide'] as String?,
       paymentMethod: json['payment_method'] == null
           ? null
-          : Daycare.fromJson(json['payment_method'] as Map<String, dynamic>),
+          : PaymentMethod.fromJson(
+              json['payment_method'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$PaymentChannelImplToJson(
@@ -230,10 +236,17 @@ Map<String, dynamic> _$$PaymentChannelImplToJson(
       'id': instance.id,
       'name': instance.name,
       'icon': instance.icon,
-      'payment_type': instance.paymentType,
-      'is_active': instance.isActive,
-      'bank_number': instance.bankNumber,
-      'account_holder_name': instance.accountHolderName,
-      'payment_guide': instance.paymentGuide,
       'payment_method': instance.paymentMethod?.toJson(),
+    };
+
+_$PaymentMethodImpl _$$PaymentMethodImplFromJson(Map<String, dynamic> json) =>
+    _$PaymentMethodImpl(
+      id: (json['id'] as num?)?.toInt(),
+      name: json['name'] as String?,
+    );
+
+Map<String, dynamic> _$$PaymentMethodImplToJson(_$PaymentMethodImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
     };

@@ -2,6 +2,8 @@
 //
 //     final detailPriceResponse = detailPriceResponseFromMap(jsonString);
 
+// ignore_for_file: invalid_annotation_target, duplicate_ignore
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:intl/intl.dart';
 
@@ -12,6 +14,7 @@ part 'detail_price_response.g.dart';
 abstract class DetailPriceResponse with _$DetailPriceResponse {
   const DetailPriceResponse._();
 
+  // ignore: invalid_annotation_target
   @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
   const factory DetailPriceResponse({
     int? totalPrice,

@@ -4,7 +4,7 @@ import './master_data_controller.dart';
 
 class MasterDataPage extends GetView<MasterDataController> {
     
-    const MasterDataPage({Key? key}) : super(key: key);
+    const MasterDataPage({super.key});
 
     @override
     Widget build(BuildContext context) {

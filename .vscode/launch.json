@@ -1,0 +1,91 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "dev",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/launcher/main_dev.dart",
+            "args": [
+                "--flavor",
+                "dev",
+                "--verbose"
+            ]
+        },
+        {
+            "name": "stag",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/launcher/main_stag.dart",
+            "args": [
+                "--flavor",
+                "stag",
+                "--verbose"
+            ]
+        },
+        {
+            "name": "prod",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/launcher/main_prod.dart",
+            "args": [
+                "--flavor",
+                "prod",
+                "--verbose"
+            ]
+        },
+        {
+            "name": "web dev",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/launcher/main_dev.dart",
+            "args": [
+                "--web-renderer",
+                "canvaskit",
+                "--web-port",
+                "8080",
+                "-d",
+                "chrome",
+                "--web-browser-flag",
+                "--disable-web-security"
+
+            ]
+        },
+        {
+            "name": "web prod",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/launcher/main_prod.dart",
+            "args": [
+                "--web-renderer",
+                "html",
+                "--web-port",
+                "8080",
+                "-d",
+                "chrome",
+                "--web-browser-flag",
+                "--disable-web-security"
+            ]
+        },
+        {
+            "name": "web stag",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/launcher/main_stag.dart",
+            "args": [
+                "--web-renderer",
+                "html",
+                "--web-port",
+                "8080",
+                "-d",
+                "chrome",
+                "--web-browser-flag",
+                "--disable-web-security",
+                "-v"
+            ]
+        },
+    ]
+}

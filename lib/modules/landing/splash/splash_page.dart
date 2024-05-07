@@ -28,7 +28,7 @@ class SplashPage extends GetView<SplashController> {
         errorWidget: (context, url, error) {
           return FutureBuilder(
               future: Future.delayed(const Duration(seconds: 1), () {
-                controller.checkFirstInstall();
+                controller.checkLogin();
               }),
               builder: (context, _) {
                 return const Icon(Icons.error);
@@ -37,7 +37,7 @@ class SplashPage extends GetView<SplashController> {
         imageBuilder: (context, imageProvider) {
           return FutureBuilder(
               future: Future.delayed(const Duration(milliseconds: 500), () {
-                controller.checkFirstInstall();
+                controller.checkLogin();
               }),
               builder: (context, _) {
                 return Image(

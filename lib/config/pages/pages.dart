@@ -9,6 +9,7 @@ import '../../modules/landing/social_menu/social_menu_bindings.dart';
 import '../../modules/landing/splash/splash_binding.dart';
 import '../../modules/landing/splash/splash_page.dart';
 import '../../modules/auth/auth_pages.dart';
+import '../../modules/order/order_pages.dart';
 import '../../modules/profile/profile_pages.dart';
 
 class AppPages {
@@ -37,7 +38,7 @@ class AppPages {
         ...ProfilePages.pages,
         // ...NewsPages.pages,
         // ...DaycarePage.pages,
-        // ...OrderPages.pages,
+        ...OrderPages.pages,
         // ...PlaygroundPages.pages,
         // ...ChildcarePages.pages,
         // GetPage(

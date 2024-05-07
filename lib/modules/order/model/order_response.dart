@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'dart:convert';
 
 part 'order_response.freezed.dart';
 part 'order_response.g.dart';
@@ -8,15 +9,19 @@ class OrderResponse with _$OrderResponse {
   @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
   const factory OrderResponse({
     int? id,
+    dynamic newPriceId,
+    dynamic type,
+    dynamic typeId,
     DateTime? startDate,
     DateTime? endDate,
-    dynamic specialRequest,
+    String? specialRequest,
     String? price,
     String? discountAmount,
     String? discountPercent,
     dynamic voucherName,
     String? totalDiscount,
-    dynamic fee,
+    String? fee,
+    String? bankFee,
     String? totalPrice,
     String? status,
     String? statusRefund,
@@ -24,17 +29,15 @@ class OrderResponse with _$OrderResponse {
     String? virtualAccountNumber,
     dynamic qrUrl,
     dynamic deeplinkUrl,
-    dynamic paymentAt,
+    DateTime? paymentAt,
     DateTime? expiredAt,
     DateTime? createdAt,
     DateTime? updatedAt,
-    dynamic rejectedReason,
+    String? rejectedReason,
     dynamic rejectCategoryId,
     List<ChildrenItemDetail>? childrenItemDetails,
     List<OrderResponseItem>? items,
     PaymentChannel? paymentChannel,
-    dynamic review,
-    Daycare? daycare,
     Parent? parent,
   }) = _OrderResponse;
 
@@ -87,18 +90,6 @@ class ProgramDetail with _$ProgramDetail {
 }
 
 @freezed
-class Daycare with _$Daycare {
-  @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-  const factory Daycare({
-    int? id,
-    String? name,
-  }) = _Daycare;
-
-  factory Daycare.fromJson(Map<String, dynamic> json) =>
-      _$DaycareFromJson(json);
-}
-
-@freezed
 class OrderResponseItem with _$OrderResponseItem {
   @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
   const factory OrderResponseItem({
@@ -118,14 +109,28 @@ class Parent with _$Parent {
   const factory Parent({
     int? id,
     String? name,
-    String? photo,
+    dynamic photo,
     dynamic nik,
     String? phoneNumber,
     String? gender,
-    List<dynamic>? guardians,
+    List<Guardian>? guardians,
   }) = _Parent;
 
   factory Parent.fromJson(Map<String, dynamic> json) => _$ParentFromJson(json);
+}
+
+@freezed
+class Guardian with _$Guardian {
+  @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+  const factory Guardian({
+    int? id,
+    String? name,
+    String? parentId,
+    String? phoneNumber,
+  }) = _Guardian;
+
+  factory Guardian.fromJson(Map<String, dynamic> json) =>
+      _$GuardianFromJson(json);
 }
 
 @freezed
@@ -135,14 +140,21 @@ class PaymentChannel with _$PaymentChannel {
     int? id,
     String? name,
     String? icon,
-    String? paymentType,
-    bool? isActive,
-    dynamic bankNumber,
-    dynamic accountHolderName,
-    String? paymentGuide,
-    Daycare? paymentMethod,
+    PaymentMethod? paymentMethod,
   }) = _PaymentChannel;
 
   factory PaymentChannel.fromJson(Map<String, dynamic> json) =>
       _$PaymentChannelFromJson(json);
+}
+
+@freezed
+class PaymentMethod with _$PaymentMethod {
+  @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+  const factory PaymentMethod({
+    int? id,
+    String? name,
+  }) = _PaymentMethod;
+
+  factory PaymentMethod.fromJson(Map<String, dynamic> json) =>
+      _$PaymentMethodFromJson(json);
 }

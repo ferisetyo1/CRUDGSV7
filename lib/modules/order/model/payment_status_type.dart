@@ -8,17 +8,15 @@ enum PaymentStatusType {
       show: "Menunggu Pembayaran",
       textColor: ColorPalletes.kuningNormal,
       bgColor: ColorPalletes.kuningTerang,
-      visibilityButtonReorder: false,
-      visibilityButtonCancel: true,
-      visibilityButtonBayar: true,
       visibilityButtonUnduhInvoice: false),
   paid(
       name: "PAID",
       show: "Dibayar",
       textColor: ColorPalletes.kuningNormal,
       bgColor: ColorPalletes.kuningTerang,
-      visibilityButtonReorder: false,
-      visibilityButtonReschedule: true),
+      visibilityButtonAccept: true,
+      visibilityButtonReject: true,
+      visibilityButtonUnduhInvoice: false),
   expired(
     name: "EXPIRED",
     show: "Expired",
@@ -34,17 +32,16 @@ enum PaymentStatusType {
   ),
   approved(
     name: "APPROVED",
-    show: "Disetujui",
+    show: "Diterima",
     textColor: ColorPalletes.toscaNormal,
     bgColor: ColorPalletes.toscaTerang,
   ),
   rejected(
-      name: "REJECTED",
-      show: "Ditolak",
-      textColor: ColorPalletes.merahNormal,
-      bgColor: ColorPalletes.merahTerang,
-      visibilityButtonRefund: true,
-      visibilityButtonReorder: false),
+    name: "REJECTED",
+    show: "Ditolak",
+    textColor: ColorPalletes.merahNormal,
+    bgColor: ColorPalletes.merahTerang,
+  ),
   refunded(
     name: "REFUNDED",
     show: "Direfund",
@@ -56,11 +53,8 @@ enum PaymentStatusType {
       show: "Tidak Diketahui",
       textColor: ColorPalletes.merahNormal,
       bgColor: ColorPalletes.merahTerang,
-      visibilityButtonCancel: false,
-      visibilityButtonReorder: false,
-      visibilityButtonBayar: false,
-      visibilityButtonRefund: false,
-      visibilityButtonReschedule: false,
+      visibilityButtonAccept: false,
+      visibilityButtonReject: false,
       visibilityButtonUnduhInvoice: false);
 
   const PaymentStatusType(
@@ -68,30 +62,21 @@ enum PaymentStatusType {
       required this.show,
       required this.textColor,
       required this.bgColor,
-      this.visibilityButtonReorder = true,
-      this.visibilityButtonCancel = false,
-      this.visibilityButtonBayar = false,
       this.visibilityButtonUnduhInvoice = true,
-      this.visibilityButtonRefund = false,
-      this.visibilityButtonReschedule = false});
+      this.visibilityButtonAccept = false,
+      this.visibilityButtonReject = false});
 
   final String name;
   final String show;
   final Color textColor;
   final Color bgColor;
-  final bool visibilityButtonReorder;
-  final bool visibilityButtonCancel;
-  final bool visibilityButtonBayar;
+  final bool visibilityButtonAccept;
+  final bool visibilityButtonReject;
   final bool visibilityButtonUnduhInvoice;
-  final bool visibilityButtonReschedule;
-  final bool visibilityButtonRefund;
 
   bool get visibleButton =>
-      visibilityButtonBayar ||
-      visibilityButtonCancel ||
-      visibilityButtonRefund ||
-      visibilityButtonReorder ||
-      visibilityButtonReschedule ||
+      visibilityButtonReject ||
+      visibilityButtonAccept ||
       visibilityButtonUnduhInvoice;
 
   static PaymentStatusType toPaymentStatusType(String? s) {

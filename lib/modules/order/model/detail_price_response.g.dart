@@ -9,7 +9,7 @@ part of 'detail_price_response.dart';
 _$DetailPriceResponseImpl _$$DetailPriceResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$DetailPriceResponseImpl(
-      totalPrice: json['total_price'] as int?,
+      totalPrice: (json['total_price'] as num?)?.toInt(),
       detailPrice: (json['detail_price'] as List<dynamic>?)
           ?.map((e) => DetailPrice.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -31,9 +31,9 @@ Map<String, dynamic> _$$DetailPriceResponseImplToJson(
 _$DetailPriceImpl _$$DetailPriceImplFromJson(Map<String, dynamic> json) =>
     _$DetailPriceImpl(
       name: json['name'] as String?,
-      price: json['price'] as int?,
-      quantity: json['quantity'] as int?,
-      totalPrice: json['total_price'] as int?,
+      price: (json['price'] as num?)?.toInt(),
+      quantity: (json['quantity'] as num?)?.toInt(),
+      totalPrice: (json['total_price'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$DetailPriceImplToJson(_$DetailPriceImpl instance) =>

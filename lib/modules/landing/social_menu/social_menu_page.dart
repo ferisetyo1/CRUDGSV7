@@ -4,7 +4,7 @@ import './social_menu_controller.dart';
 
 class SocialMenuPage extends GetView<SocialMenuController> {
     
-    const SocialMenuPage({Key? key}) : super(key: key);
+    const SocialMenuPage({super.key});
 
     @override
     Widget build(BuildContext context) {

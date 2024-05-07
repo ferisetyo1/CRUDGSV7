@@ -9,7 +9,7 @@ part of 'children_response.dart';
 _$ChildrenResponseImpl _$$ChildrenResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$ChildrenResponseImpl(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       nik: json['nik'] as String?,
       name: json['name'] as String?,
       gender: json['gender'],
@@ -18,7 +18,7 @@ _$ChildrenResponseImpl _$$ChildrenResponseImplFromJson(
           : DateTime.parse(json['birth_date'] as String),
       photo: json['photo'] as String?,
       isEnableOrder: json['is_enable_order'] as bool?,
-      age: json['age'] as int?,
+      age: (json['age'] as num?)?.toInt(),
       ageString: json['age_string'] as String?,
     );
 
