@@ -1,3 +1,4 @@
+import 'package:boonda_mitra/modules/master_data/master_data_pages.dart';
 import 'package:get/get.dart';
 
 import '../../modules/landing/home/home_bindings.dart';
@@ -36,6 +37,7 @@ class AppPages {
         ),
         ...AuthPages.pages,
         ...ProfilePages.pages,
+        ...MasterDataPages.pages,
         // ...NewsPages.pages,
         // ...DaycarePage.pages,
         ...OrderPages.pages,

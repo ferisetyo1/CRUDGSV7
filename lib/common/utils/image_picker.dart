@@ -26,8 +26,8 @@ Future<XFile?> showImagePickerDialog(BuildContext context) async {
                   context, Permission.camera.value)) {
                 return;
               }
-              final result =
-                  await ImagePicker().pickImage(source: ImageSource.camera);
+              final result = await ImagePicker()
+                  .pickImage(source: ImageSource.camera, imageQuality: 25);
               // ignore: use_build_context_synchronously
               Navigator.pop(context, result);
             },
@@ -39,8 +39,8 @@ Future<XFile?> showImagePickerDialog(BuildContext context) async {
               if (!await Permissions.requestPermissionStorage(context)) {
                 return;
               }
-              final result =
-                  await ImagePicker().pickImage(source: ImageSource.gallery);
+              final result = await ImagePicker()
+                  .pickImage(source: ImageSource.gallery, imageQuality: 25);
               // ignore: use_build_context_synchronously
               Navigator.pop(context, result);
             },

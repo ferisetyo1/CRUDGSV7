@@ -61,7 +61,7 @@ class ItemSection extends StatelessWidget {
             child: SimpleRow(
               left: Text(item.voucherName ?? ""),
               right: Text(
-                "-${(item.totalDiscount).toIDRCurrency(symbol: "Rp ")}",
+                "-${item.totalDiscount?.toIDRCurrency(symbol: "Rp ")}",
                 style: const TextStyle(color: ColorPalletes.orange),
               ),
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
@@ -73,7 +73,7 @@ class ItemSection extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             right: Text(
-              item.totalPrice.toIDRCurrency(symbol: "Rp "),
+              item.totalPrice?.toIDRCurrency(symbol: "Rp ") ?? "",
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),

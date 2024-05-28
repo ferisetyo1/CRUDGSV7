@@ -18,6 +18,12 @@ class Voucher with _$Voucher {
     String? type,
     dynamic termAndConditionId,
     dynamic quota,
+    int? maximumUser,
+    int? maximumDiscount,
+    int? manimumPrice,
+    int? maximumPrice,
+    String? code,
+    bool? isNewUser,
   }) = _Voucher;
 
   factory Voucher.fromJson(Map<String, dynamic> json) =>

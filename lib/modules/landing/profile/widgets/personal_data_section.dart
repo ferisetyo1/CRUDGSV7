@@ -38,20 +38,6 @@ class PersonalDataSection extends GetView<ProfileController> {
                     child: Column(
                       children: [
                         ListTileProfile(
-                          text: "child_profile".tr,
-                          trailingIcon: const Icon(Icons.keyboard_arrow_right),
-                          onTap: () {
-                            Get.toNamed(ProfilePages.listChildren);
-                          },
-                        ),
-                        ListTileProfile(
-                          text: "guardian_profile".tr,
-                          trailingIcon: const Icon(Icons.keyboard_arrow_right),
-                          onTap: () {
-                            Get.toNamed(ProfilePages.listGuardian);
-                          },
-                        ),
-                        ListTileProfile(
                           text: "change_email".tr,
                           trailingIcon: const Icon(Icons.keyboard_arrow_right),
                           onTap: () async {

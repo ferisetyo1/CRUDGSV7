@@ -25,6 +25,12 @@ extension WdigetExt on Widget {
     );
   }
 
+  Widget suffix(Widget widget, {double spacing = 8}) {
+    return Row(
+      children: [this, SizedBox(width: spacing), widget],
+    );
+  }
+
   Widget withBgContainer(
       {required Color color,
       double borderRadius = 16,

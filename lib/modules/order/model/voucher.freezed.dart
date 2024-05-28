@@ -31,6 +31,12 @@ mixin _$Voucher {
   String? get type => throw _privateConstructorUsedError;
   dynamic get termAndConditionId => throw _privateConstructorUsedError;
   dynamic get quota => throw _privateConstructorUsedError;
+  int? get maximumUser => throw _privateConstructorUsedError;
+  int? get maximumDiscount => throw _privateConstructorUsedError;
+  int? get manimumPrice => throw _privateConstructorUsedError;
+  int? get maximumPrice => throw _privateConstructorUsedError;
+  String? get code => throw _privateConstructorUsedError;
+  bool? get isNewUser => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -53,7 +59,13 @@ abstract class $VoucherCopyWith<$Res> {
       String? photo,
       String? type,
       dynamic termAndConditionId,
-      dynamic quota});
+      dynamic quota,
+      int? maximumUser,
+      int? maximumDiscount,
+      int? manimumPrice,
+      int? maximumPrice,
+      String? code,
+      bool? isNewUser});
 }
 
 /// @nodoc
@@ -80,6 +92,12 @@ class _$VoucherCopyWithImpl<$Res, $Val extends Voucher>
     Object? type = freezed,
     Object? termAndConditionId = freezed,
     Object? quota = freezed,
+    Object? maximumUser = freezed,
+    Object? maximumDiscount = freezed,
+    Object? manimumPrice = freezed,
+    Object? maximumPrice = freezed,
+    Object? code = freezed,
+    Object? isNewUser = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -126,6 +144,30 @@ class _$VoucherCopyWithImpl<$Res, $Val extends Voucher>
           ? _value.quota
           : quota // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      maximumUser: freezed == maximumUser
+          ? _value.maximumUser
+          : maximumUser // ignore: cast_nullable_to_non_nullable
+              as int?,
+      maximumDiscount: freezed == maximumDiscount
+          ? _value.maximumDiscount
+          : maximumDiscount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      manimumPrice: freezed == manimumPrice
+          ? _value.manimumPrice
+          : manimumPrice // ignore: cast_nullable_to_non_nullable
+              as int?,
+      maximumPrice: freezed == maximumPrice
+          ? _value.maximumPrice
+          : maximumPrice // ignore: cast_nullable_to_non_nullable
+              as int?,
+      code: freezed == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isNewUser: freezed == isNewUser
+          ? _value.isNewUser
+          : isNewUser // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -148,7 +190,13 @@ abstract class _$$VoucherImplCopyWith<$Res> implements $VoucherCopyWith<$Res> {
       String? photo,
       String? type,
       dynamic termAndConditionId,
-      dynamic quota});
+      dynamic quota,
+      int? maximumUser,
+      int? maximumDiscount,
+      int? manimumPrice,
+      int? maximumPrice,
+      String? code,
+      bool? isNewUser});
 }
 
 /// @nodoc
@@ -173,6 +221,12 @@ class __$$VoucherImplCopyWithImpl<$Res>
     Object? type = freezed,
     Object? termAndConditionId = freezed,
     Object? quota = freezed,
+    Object? maximumUser = freezed,
+    Object? maximumDiscount = freezed,
+    Object? manimumPrice = freezed,
+    Object? maximumPrice = freezed,
+    Object? code = freezed,
+    Object? isNewUser = freezed,
   }) {
     return _then(_$VoucherImpl(
       id: freezed == id
@@ -219,6 +273,30 @@ class __$$VoucherImplCopyWithImpl<$Res>
           ? _value.quota
           : quota // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      maximumUser: freezed == maximumUser
+          ? _value.maximumUser
+          : maximumUser // ignore: cast_nullable_to_non_nullable
+              as int?,
+      maximumDiscount: freezed == maximumDiscount
+          ? _value.maximumDiscount
+          : maximumDiscount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      manimumPrice: freezed == manimumPrice
+          ? _value.manimumPrice
+          : manimumPrice // ignore: cast_nullable_to_non_nullable
+              as int?,
+      maximumPrice: freezed == maximumPrice
+          ? _value.maximumPrice
+          : maximumPrice // ignore: cast_nullable_to_non_nullable
+              as int?,
+      code: freezed == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isNewUser: freezed == isNewUser
+          ? _value.isNewUser
+          : isNewUser // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -238,7 +316,13 @@ class _$VoucherImpl implements _Voucher {
       this.photo,
       this.type,
       this.termAndConditionId,
-      this.quota});
+      this.quota,
+      this.maximumUser,
+      this.maximumDiscount,
+      this.manimumPrice,
+      this.maximumPrice,
+      this.code,
+      this.isNewUser});
 
   factory _$VoucherImpl.fromJson(Map<String, dynamic> json) =>
       _$$VoucherImplFromJson(json);
@@ -265,10 +349,22 @@ class _$VoucherImpl implements _Voucher {
   final dynamic termAndConditionId;
   @override
   final dynamic quota;
+  @override
+  final int? maximumUser;
+  @override
+  final int? maximumDiscount;
+  @override
+  final int? manimumPrice;
+  @override
+  final int? maximumPrice;
+  @override
+  final String? code;
+  @override
+  final bool? isNewUser;
 
   @override
   String toString() {
-    return 'Voucher(id: $id, name: $name, description: $description, startDate: $startDate, endDate: $endDate, amount: $amount, percent: $percent, photo: $photo, type: $type, termAndConditionId: $termAndConditionId, quota: $quota)';
+    return 'Voucher(id: $id, name: $name, description: $description, startDate: $startDate, endDate: $endDate, amount: $amount, percent: $percent, photo: $photo, type: $type, termAndConditionId: $termAndConditionId, quota: $quota, maximumUser: $maximumUser, maximumDiscount: $maximumDiscount, manimumPrice: $manimumPrice, maximumPrice: $maximumPrice, code: $code, isNewUser: $isNewUser)';
   }
 
   @override
@@ -289,7 +385,18 @@ class _$VoucherImpl implements _Voucher {
             (identical(other.type, type) || other.type == type) &&
             const DeepCollectionEquality()
                 .equals(other.termAndConditionId, termAndConditionId) &&
-            const DeepCollectionEquality().equals(other.quota, quota));
+            const DeepCollectionEquality().equals(other.quota, quota) &&
+            (identical(other.maximumUser, maximumUser) ||
+                other.maximumUser == maximumUser) &&
+            (identical(other.maximumDiscount, maximumDiscount) ||
+                other.maximumDiscount == maximumDiscount) &&
+            (identical(other.manimumPrice, manimumPrice) ||
+                other.manimumPrice == manimumPrice) &&
+            (identical(other.maximumPrice, maximumPrice) ||
+                other.maximumPrice == maximumPrice) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.isNewUser, isNewUser) ||
+                other.isNewUser == isNewUser));
   }
 
   @JsonKey(ignore: true)
@@ -306,7 +413,13 @@ class _$VoucherImpl implements _Voucher {
       photo,
       type,
       const DeepCollectionEquality().hash(termAndConditionId),
-      const DeepCollectionEquality().hash(quota));
+      const DeepCollectionEquality().hash(quota),
+      maximumUser,
+      maximumDiscount,
+      manimumPrice,
+      maximumPrice,
+      code,
+      isNewUser);
 
   @JsonKey(ignore: true)
   @override
@@ -334,7 +447,13 @@ abstract class _Voucher implements Voucher {
       final String? photo,
       final String? type,
       final dynamic termAndConditionId,
-      final dynamic quota}) = _$VoucherImpl;
+      final dynamic quota,
+      final int? maximumUser,
+      final int? maximumDiscount,
+      final int? manimumPrice,
+      final int? maximumPrice,
+      final String? code,
+      final bool? isNewUser}) = _$VoucherImpl;
 
   factory _Voucher.fromJson(Map<String, dynamic> json) = _$VoucherImpl.fromJson;
 
@@ -360,6 +479,18 @@ abstract class _Voucher implements Voucher {
   dynamic get termAndConditionId;
   @override
   dynamic get quota;
+  @override
+  int? get maximumUser;
+  @override
+  int? get maximumDiscount;
+  @override
+  int? get manimumPrice;
+  @override
+  int? get maximumPrice;
+  @override
+  String? get code;
+  @override
+  bool? get isNewUser;
   @override
   @JsonKey(ignore: true)
   _$$VoucherImplCopyWith<_$VoucherImpl> get copyWith =>

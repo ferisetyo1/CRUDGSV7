@@ -109,8 +109,11 @@ class MyApp extends StatelessWidget {
               checkboxTheme: checkboxThemeData,
               brightness: Brightness.light,
               radioTheme: radioThemeData,
+              scaffoldBackgroundColor: Colors.white,
               dialogBackgroundColor: Colors.white,
+              dialogTheme: const DialogTheme(backgroundColor: Colors.white),
               appBarTheme: const AppBarTheme(
+                  centerTitle: true,
                   titleTextStyle: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 20,

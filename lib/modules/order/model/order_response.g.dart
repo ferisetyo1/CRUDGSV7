@@ -19,14 +19,14 @@ _$OrderResponseImpl _$$OrderResponseImplFromJson(Map<String, dynamic> json) =>
           ? null
           : DateTime.parse(json['end_date'] as String),
       specialRequest: json['special_request'] as String?,
-      price: json['price'] as String?,
-      discountAmount: json['discount_amount'] as String?,
-      discountPercent: json['discount_percent'] as String?,
+      price: (json['price'] as num?)?.toInt(),
+      discountAmount: (json['discount_amount'] as num?)?.toInt(),
+      discountPercent: (json['discount_percent'] as num?)?.toInt(),
       voucherName: json['voucher_name'],
-      totalDiscount: json['total_discount'] as String?,
-      fee: json['fee'] as String?,
-      bankFee: json['bank_fee'] as String?,
-      totalPrice: json['total_price'] as String?,
+      totalDiscount: (json['total_discount'] as num?)?.toInt(),
+      fee: (json['fee'] as num?)?.toInt(),
+      bankFee: (json['bank_fee'] as num?)?.toInt(),
+      totalPrice: (json['total_price'] as num?)?.toInt(),
       status: json['status'] as String?,
       statusRefund: json['status_refund'] as String?,
       invoiceNumber: json['invoice_number'] as String?,
@@ -136,9 +136,9 @@ _$ChildrenItemDetailItemImpl _$$ChildrenItemDetailItemImplFromJson(
         Map<String, dynamic> json) =>
     _$ChildrenItemDetailItemImpl(
       name: json['name'] as String?,
-      price: json['price'] as String?,
-      quantity: json['quantity'] as String?,
-      totalPrice: json['total_price'] as String?,
+      price: (json['price'] as num?)?.toInt(),
+      quantity: (json['quantity'] as num?)?.toInt(),
+      totalPrice: (json['total_price'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$ChildrenItemDetailItemImplToJson(

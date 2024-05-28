@@ -1,5 +1,6 @@
 import 'package:boonda_mitra/common/utils/date_ext.dart';
 import 'package:boonda_mitra/config/bindings/app_bindings.dart';
+import 'package:boonda_mitra/modules/order/filter_order/model/filterresult.dart';
 import 'package:boonda_mitra/modules/order/model/detail_price_response.dart';
 import 'package:boonda_mitra/modules/order/model/income_data.dart';
 import 'package:boonda_mitra/modules/order/model/order_response.dart';
@@ -128,11 +129,23 @@ class OrderServices extends GetxService {
   }
 
   Future<AppState<List<IncomeData>>> incomeData(
-      DateTime start, DateTime end) async {
+      FilterOrderResult filter) async {
     return await dio.handleRequest(
-      request: (helper) => helper.get("total-revenue"),
+      request: (helper) {
+        var queryParameters = {
+          "start_date": filter.start?.format("yyyy-MM-dd"),
+          "end_date": filter.end?.format("yyyy-MM-dd"),
+          "parent_id": filter.parentId,
+          "children_id": filter.childrenId,
+        };
+        queryParameters.removeWhere((k, v) => v == null);
+        return helper.get("income-reports", queryParameters: queryParameters);
+      },
       customSuccess: (data) {
         final list = data.data as List;
+        if (list.isEmpty) {
+          return const AppState.empty();
+        }
         final newData = list.map((e) => IncomeData.fromJson(e)).toList();
         return AppState.success(newData);
       },

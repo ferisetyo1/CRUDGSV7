@@ -15,14 +15,14 @@ class OrderResponse with _$OrderResponse {
     DateTime? startDate,
     DateTime? endDate,
     String? specialRequest,
-    String? price,
-    String? discountAmount,
-    String? discountPercent,
+    int? price,
+    int? discountAmount,
+    int? discountPercent,
     dynamic voucherName,
-    String? totalDiscount,
-    String? fee,
-    String? bankFee,
-    String? totalPrice,
+    int? totalDiscount,
+    int? fee,
+    int? bankFee,
+    int? totalPrice,
     String? status,
     String? statusRefund,
     String? invoiceNumber,
@@ -68,9 +68,9 @@ class ChildrenItemDetailItem with _$ChildrenItemDetailItem {
   @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
   const factory ChildrenItemDetailItem({
     String? name,
-    String? price,
-    String? quantity,
-    String? totalPrice,
+    int? price,
+    int? quantity,
+    int? totalPrice,
   }) = _ChildrenItemDetailItem;
 
   factory ChildrenItemDetailItem.fromJson(Map<String, dynamic> json) =>

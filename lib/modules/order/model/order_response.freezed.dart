@@ -27,14 +27,14 @@ mixin _$OrderResponse {
   DateTime? get startDate => throw _privateConstructorUsedError;
   DateTime? get endDate => throw _privateConstructorUsedError;
   String? get specialRequest => throw _privateConstructorUsedError;
-  String? get price => throw _privateConstructorUsedError;
-  String? get discountAmount => throw _privateConstructorUsedError;
-  String? get discountPercent => throw _privateConstructorUsedError;
+  int? get price => throw _privateConstructorUsedError;
+  int? get discountAmount => throw _privateConstructorUsedError;
+  int? get discountPercent => throw _privateConstructorUsedError;
   dynamic get voucherName => throw _privateConstructorUsedError;
-  String? get totalDiscount => throw _privateConstructorUsedError;
-  String? get fee => throw _privateConstructorUsedError;
-  String? get bankFee => throw _privateConstructorUsedError;
-  String? get totalPrice => throw _privateConstructorUsedError;
+  int? get totalDiscount => throw _privateConstructorUsedError;
+  int? get fee => throw _privateConstructorUsedError;
+  int? get bankFee => throw _privateConstructorUsedError;
+  int? get totalPrice => throw _privateConstructorUsedError;
   String? get status => throw _privateConstructorUsedError;
   String? get statusRefund => throw _privateConstructorUsedError;
   String? get invoiceNumber => throw _privateConstructorUsedError;
@@ -73,14 +73,14 @@ abstract class $OrderResponseCopyWith<$Res> {
       DateTime? startDate,
       DateTime? endDate,
       String? specialRequest,
-      String? price,
-      String? discountAmount,
-      String? discountPercent,
+      int? price,
+      int? discountAmount,
+      int? discountPercent,
       dynamic voucherName,
-      String? totalDiscount,
-      String? fee,
-      String? bankFee,
-      String? totalPrice,
+      int? totalDiscount,
+      int? fee,
+      int? bankFee,
+      int? totalPrice,
       String? status,
       String? statusRefund,
       String? invoiceNumber,
@@ -179,15 +179,15 @@ class _$OrderResponseCopyWithImpl<$Res, $Val extends OrderResponse>
       price: freezed == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       discountAmount: freezed == discountAmount
           ? _value.discountAmount
           : discountAmount // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       discountPercent: freezed == discountPercent
           ? _value.discountPercent
           : discountPercent // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       voucherName: freezed == voucherName
           ? _value.voucherName
           : voucherName // ignore: cast_nullable_to_non_nullable
@@ -195,19 +195,19 @@ class _$OrderResponseCopyWithImpl<$Res, $Val extends OrderResponse>
       totalDiscount: freezed == totalDiscount
           ? _value.totalDiscount
           : totalDiscount // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       fee: freezed == fee
           ? _value.fee
           : fee // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       bankFee: freezed == bankFee
           ? _value.bankFee
           : bankFee // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       totalPrice: freezed == totalPrice
           ? _value.totalPrice
           : totalPrice // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -316,14 +316,14 @@ abstract class _$$OrderResponseImplCopyWith<$Res>
       DateTime? startDate,
       DateTime? endDate,
       String? specialRequest,
-      String? price,
-      String? discountAmount,
-      String? discountPercent,
+      int? price,
+      int? discountAmount,
+      int? discountPercent,
       dynamic voucherName,
-      String? totalDiscount,
-      String? fee,
-      String? bankFee,
-      String? totalPrice,
+      int? totalDiscount,
+      int? fee,
+      int? bankFee,
+      int? totalPrice,
       String? status,
       String? statusRefund,
       String? invoiceNumber,
@@ -422,15 +422,15 @@ class __$$OrderResponseImplCopyWithImpl<$Res>
       price: freezed == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       discountAmount: freezed == discountAmount
           ? _value.discountAmount
           : discountAmount // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       discountPercent: freezed == discountPercent
           ? _value.discountPercent
           : discountPercent // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       voucherName: freezed == voucherName
           ? _value.voucherName
           : voucherName // ignore: cast_nullable_to_non_nullable
@@ -438,19 +438,19 @@ class __$$OrderResponseImplCopyWithImpl<$Res>
       totalDiscount: freezed == totalDiscount
           ? _value.totalDiscount
           : totalDiscount // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       fee: freezed == fee
           ? _value.fee
           : fee // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       bankFee: freezed == bankFee
           ? _value.bankFee
           : bankFee // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       totalPrice: freezed == totalPrice
           ? _value.totalPrice
           : totalPrice // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -576,21 +576,21 @@ class _$OrderResponseImpl implements _OrderResponse {
   @override
   final String? specialRequest;
   @override
-  final String? price;
+  final int? price;
   @override
-  final String? discountAmount;
+  final int? discountAmount;
   @override
-  final String? discountPercent;
+  final int? discountPercent;
   @override
   final dynamic voucherName;
   @override
-  final String? totalDiscount;
+  final int? totalDiscount;
   @override
-  final String? fee;
+  final int? fee;
   @override
-  final String? bankFee;
+  final int? bankFee;
   @override
-  final String? totalPrice;
+  final int? totalPrice;
   @override
   final String? status;
   @override
@@ -764,14 +764,14 @@ abstract class _OrderResponse implements OrderResponse {
       final DateTime? startDate,
       final DateTime? endDate,
       final String? specialRequest,
-      final String? price,
-      final String? discountAmount,
-      final String? discountPercent,
+      final int? price,
+      final int? discountAmount,
+      final int? discountPercent,
       final dynamic voucherName,
-      final String? totalDiscount,
-      final String? fee,
-      final String? bankFee,
-      final String? totalPrice,
+      final int? totalDiscount,
+      final int? fee,
+      final int? bankFee,
+      final int? totalPrice,
       final String? status,
       final String? statusRefund,
       final String? invoiceNumber,
@@ -807,21 +807,21 @@ abstract class _OrderResponse implements OrderResponse {
   @override
   String? get specialRequest;
   @override
-  String? get price;
+  int? get price;
   @override
-  String? get discountAmount;
+  int? get discountAmount;
   @override
-  String? get discountPercent;
+  int? get discountPercent;
   @override
   dynamic get voucherName;
   @override
-  String? get totalDiscount;
+  int? get totalDiscount;
   @override
-  String? get fee;
+  int? get fee;
   @override
-  String? get bankFee;
+  int? get bankFee;
   @override
-  String? get totalPrice;
+  int? get totalPrice;
   @override
   String? get status;
   @override
@@ -1187,9 +1187,9 @@ ChildrenItemDetailItem _$ChildrenItemDetailItemFromJson(
 /// @nodoc
 mixin _$ChildrenItemDetailItem {
   String? get name => throw _privateConstructorUsedError;
-  String? get price => throw _privateConstructorUsedError;
-  String? get quantity => throw _privateConstructorUsedError;
-  String? get totalPrice => throw _privateConstructorUsedError;
+  int? get price => throw _privateConstructorUsedError;
+  int? get quantity => throw _privateConstructorUsedError;
+  int? get totalPrice => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1203,8 +1203,7 @@ abstract class $ChildrenItemDetailItemCopyWith<$Res> {
           $Res Function(ChildrenItemDetailItem) then) =
       _$ChildrenItemDetailItemCopyWithImpl<$Res, ChildrenItemDetailItem>;
   @useResult
-  $Res call(
-      {String? name, String? price, String? quantity, String? totalPrice});
+  $Res call({String? name, int? price, int? quantity, int? totalPrice});
 }
 
 /// @nodoc
@@ -1234,15 +1233,15 @@ class _$ChildrenItemDetailItemCopyWithImpl<$Res,
       price: freezed == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       quantity: freezed == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       totalPrice: freezed == totalPrice
           ? _value.totalPrice
           : totalPrice // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
     ) as $Val);
   }
 }
@@ -1256,8 +1255,7 @@ abstract class _$$ChildrenItemDetailItemImplCopyWith<$Res>
       __$$ChildrenItemDetailItemImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? name, String? price, String? quantity, String? totalPrice});
+  $Res call({String? name, int? price, int? quantity, int? totalPrice});
 }
 
 /// @nodoc
@@ -1286,15 +1284,15 @@ class __$$ChildrenItemDetailItemImplCopyWithImpl<$Res>
       price: freezed == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       quantity: freezed == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       totalPrice: freezed == totalPrice
           ? _value.totalPrice
           : totalPrice // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
     ));
   }
 }
@@ -1312,11 +1310,11 @@ class _$ChildrenItemDetailItemImpl implements _ChildrenItemDetailItem {
   @override
   final String? name;
   @override
-  final String? price;
+  final int? price;
   @override
-  final String? quantity;
+  final int? quantity;
   @override
-  final String? totalPrice;
+  final int? totalPrice;
 
   @override
   String toString() {
@@ -1359,9 +1357,9 @@ class _$ChildrenItemDetailItemImpl implements _ChildrenItemDetailItem {
 abstract class _ChildrenItemDetailItem implements ChildrenItemDetailItem {
   const factory _ChildrenItemDetailItem(
       {final String? name,
-      final String? price,
-      final String? quantity,
-      final String? totalPrice}) = _$ChildrenItemDetailItemImpl;
+      final int? price,
+      final int? quantity,
+      final int? totalPrice}) = _$ChildrenItemDetailItemImpl;
 
   factory _ChildrenItemDetailItem.fromJson(Map<String, dynamic> json) =
       _$ChildrenItemDetailItemImpl.fromJson;
@@ -1369,11 +1367,11 @@ abstract class _ChildrenItemDetailItem implements ChildrenItemDetailItem {
   @override
   String? get name;
   @override
-  String? get price;
+  int? get price;
   @override
-  String? get quantity;
+  int? get quantity;
   @override
-  String? get totalPrice;
+  int? get totalPrice;
   @override
   @JsonKey(ignore: true)
   _$$ChildrenItemDetailItemImplCopyWith<_$ChildrenItemDetailItemImpl>

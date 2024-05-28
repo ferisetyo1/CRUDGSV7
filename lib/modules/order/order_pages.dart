@@ -1,3 +1,5 @@
+import 'package:boonda_mitra/modules/order/filter_order/filter_order_bindings.dart';
+import 'package:boonda_mitra/modules/order/filter_order/filter_order_page.dart';
 import 'package:boonda_mitra/modules/order/list_order/list_order_bindings.dart';
 import 'package:boonda_mitra/modules/order/list_order/list_order_page.dart';
 import 'package:get/get.dart';
@@ -9,6 +11,7 @@ import 'invoice_detail/invoice_detail_page.dart';
 class OrderPages {
   static const invoice = "/invoice";
   static const list = "/list-invoice";
+  static const filter = "/filter-invoice";
   static List<GetPage> get pages => [
         GetPage(
             name: invoice,
@@ -19,6 +22,11 @@ class OrderPages {
             name: list,
             page: () => const ListOrderPage(),
             binding: ListOrderBindings(),
+            middlewares: [AuthMiddleware()]),
+        GetPage(
+            name: filter,
+            page: () => const FilterOrderPage(),
+            binding: FilterOrderBindings(),
             middlewares: [AuthMiddleware()]),
       ];
 }

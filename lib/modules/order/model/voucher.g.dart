@@ -23,6 +23,12 @@ _$VoucherImpl _$$VoucherImplFromJson(Map<String, dynamic> json) =>
       type: json['type'] as String?,
       termAndConditionId: json['term_and_condition_id'],
       quota: json['quota'],
+      maximumUser: (json['maximum_user'] as num?)?.toInt(),
+      maximumDiscount: (json['maximum_discount'] as num?)?.toInt(),
+      manimumPrice: (json['manimum_price'] as num?)?.toInt(),
+      maximumPrice: (json['maximum_price'] as num?)?.toInt(),
+      code: json['code'] as String?,
+      isNewUser: json['is_new_user'] as bool?,
     );
 
 Map<String, dynamic> _$$VoucherImplToJson(_$VoucherImpl instance) =>
@@ -38,4 +44,10 @@ Map<String, dynamic> _$$VoucherImplToJson(_$VoucherImpl instance) =>
       'type': instance.type,
       'term_and_condition_id': instance.termAndConditionId,
       'quota': instance.quota,
+      'maximum_user': instance.maximumUser,
+      'maximum_discount': instance.maximumDiscount,
+      'manimum_price': instance.manimumPrice,
+      'maximum_price': instance.maximumPrice,
+      'code': instance.code,
+      'is_new_user': instance.isNewUser,
     };

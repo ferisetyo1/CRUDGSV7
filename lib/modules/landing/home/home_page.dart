@@ -96,18 +96,20 @@ class TotalPemasukan extends GetView<HomeController> {
             children: [
               Row(
                 children: [
-                  Expanded(
+                  const Expanded(
                     child: Text(
                       "Transaksi terbaru",
                       style: TextStyle(
                           color: ColorPalletes.abuabuGelap, fontSize: 12),
                     ),
                   ),
-                  Text(
+                  const Text(
                     "Lihat Semua",
                     style: TextStyle(
                         color: ColorPalletes.toscaNormal, fontSize: 12),
-                  ).clickable(() {}, padding: EdgeInsets.all(0)),
+                  ).clickable(() {
+                    Get.toNamed(OrderPages.list);
+                  }, padding: const EdgeInsets.all(0)),
                 ],
               ),
               controller.orderState.value.loadingWidget(),
@@ -184,9 +186,7 @@ class CardOrder extends StatelessWidget {
                     TextStyle(color: ColorPalletes.abuabuGelap, fontSize: 11),
               )),
               Text(
-                int.tryParse(data.totalPrice ?? "")
-                        ?.toIDRCurrency(symbol: "Rp") ??
-                    "",
+                data.totalPrice?.toIDRCurrency(symbol: "Rp") ?? "",
                 style: TextStyle(
                     color: ColorPalletes.orange, fontWeight: FontWeight.bold),
               ),

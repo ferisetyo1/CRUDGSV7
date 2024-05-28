@@ -32,4 +32,5 @@ class ImageAssetPath {
   static const playgroundFeature = "images/features/playground.png";
   static const preschoolFeature = "images/features/preschool.png";
   static const playgroupFeature = "images/features/playgroup.png";
+  static const icMasterData = "images/ic_master_data.svg";
 }
